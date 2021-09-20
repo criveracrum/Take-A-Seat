@@ -6,6 +6,7 @@ This project aims to offer a solution to open office “hot desking” called Ta
 
 Members:
 
-Chadwick Rivera-Crum email: criveracrum@gmail.com/criverac@depaul.edu
-Amy Moretti  email: amorett1@depaul.edu
-Azalea Mendoza email: aza21aya@gmail.com
+Chadwick Rivera-Crum email: criveracrum@gmail.com/criverac@depaul.edu \n
+Amy Moretti  email: amorett1@depaul.edu \n
+Azalea Mendoza email: aza21aya@gmail.com \n
+
