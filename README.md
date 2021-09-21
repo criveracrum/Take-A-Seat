@@ -9,4 +9,5 @@ Members:
 Chadwick Rivera-Crum email: criveracrum@gmail.com/criverac@depaul.edu  
 Amy Moretti  email: amorett1@depaul.edu   
 Azalea Mendoza email: aza21aya@gmail.com   
+Aldo Brigneti email: aldoabz92@gmail.com
 
