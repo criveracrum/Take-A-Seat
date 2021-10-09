@@ -21,7 +21,7 @@ public class DemoApplication {
       return (args) -> {
         System.out.println("begin encoded");
         System.out.println(greeting);
-              System.out.println("end encoded");
+        System.out.println("end encoded");
       };
     }    
 

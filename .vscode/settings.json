@@ -1,3 +1,4 @@
 {
-    "sqltools.connections": []
+    "sqltools.connections": [],
+    "java.configuration.updateBuildConfiguration": "interactive"
 }
