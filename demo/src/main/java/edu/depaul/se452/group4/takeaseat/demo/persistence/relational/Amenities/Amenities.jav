@@ -1,4 +1,4 @@
-package edu.depaul.se452.group4.takeaseat.demo;
+package edu.depaul.se452.group4.takeaseat.demo.persistence.relational;
 
 
 @Data
@@ -7,16 +7,12 @@ public class Amenities {
     
     @Id
     @GeneratedValue
-    private long id;
+    private Long id;
 
 
         
     @Column(name = "amenityName")
     private String amenityName;
-
-    
-
-
 
 
 }

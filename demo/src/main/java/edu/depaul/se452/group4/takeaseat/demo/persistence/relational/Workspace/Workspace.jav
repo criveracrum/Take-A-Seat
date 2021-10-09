@@ -4,7 +4,7 @@ package edu.depaul.se452.group4.takeaseat.demo;
 
 @Data
 @Entity
-public class Worspace {
+public class Workspace {
     
 @Id
 @GeneratedValue
