@@ -1,0 +1,11 @@
+
+
+app.greeting = SE 452 Dev Group 4
+
+spring.datasource.url = jdbc:h2:mem:se452db
+spring.jpa.show-sql = true
+spring.datasourcce.platform = h2
+
+
+
+

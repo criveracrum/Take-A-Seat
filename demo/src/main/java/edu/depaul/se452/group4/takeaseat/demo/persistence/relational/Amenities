@@ -1,0 +1,22 @@
+package edu.depaul.se452.group4.takeaseat.demo;
+
+
+@Data
+@Entity
+public class Amenities {
+    
+    @Id
+    @GeneratedValue
+    private long id;
+
+
+        
+    @Column(name = "amenityName")
+    private String amenityName;
+
+    
+
+
+
+
+}
