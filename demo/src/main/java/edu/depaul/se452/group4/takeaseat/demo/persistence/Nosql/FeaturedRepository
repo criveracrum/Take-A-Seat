@@ -1,9 +1,0 @@
-import java.util.List;
-
-import org.springframework.data.repository.CrudRepository;
-
-public interface FeaturedRepository extends FeaturedRepository<FeaturedRepository, String>{
-
-    @Override
-    List<Newsfeed> findAll();
-}

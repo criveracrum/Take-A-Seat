@@ -1,4 +1,4 @@
-package edu.depaul.se452.group4.takeaseat.demo.persistence.relational.Amenities;
+package edu.depaul.se452.group4.takeaseat.demo.Amenities;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;

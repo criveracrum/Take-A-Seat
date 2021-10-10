@@ -1,3 +1,6 @@
+package edu.depaul.se452.group4.takeaseat.demo.Featured;
+
+
 import java.io.Serializable;
 import java.util.Date;
 
