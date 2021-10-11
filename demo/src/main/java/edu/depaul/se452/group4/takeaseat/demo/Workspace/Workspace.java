@@ -20,9 +20,6 @@ public class Workspace {
     @Column(name = "workspacename")
     private String workspacename;
 
-    @Column(name = "amenityID")
-    private int amenityID;
-
     @Column(name = "maxSize")
     @NonNull
     private int maxSize;
