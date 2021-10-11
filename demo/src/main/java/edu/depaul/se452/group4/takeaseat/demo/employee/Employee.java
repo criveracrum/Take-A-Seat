@@ -11,7 +11,6 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "Employees")
 public class Employee {
   @Id // primary key
   @GeneratedValue
