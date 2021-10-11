@@ -1,4 +1,4 @@
-package edu.depaul.se452.group4.takeaseat.demo.Workspace;
+package edu.depaul.se452.group4.takeaseat.demo.workspace;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
