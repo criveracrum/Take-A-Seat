@@ -9,7 +9,7 @@ import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Document(collection = "Featured")
+@Document(collection = "featured")
 public class Featured implements Serializable{
     
     private String workspaceID;
