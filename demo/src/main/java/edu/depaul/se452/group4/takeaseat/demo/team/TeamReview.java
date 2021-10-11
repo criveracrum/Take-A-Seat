@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Document(collection = "reviews")
+@Document(collection = "team_reviews")
 public class TeamReview {
   @Id
   private String team;

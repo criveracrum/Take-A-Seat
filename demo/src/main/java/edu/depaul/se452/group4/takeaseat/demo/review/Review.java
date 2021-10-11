@@ -7,7 +7,7 @@ import lombok.Data;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@Document(collection = "review")
+@Document(collection = "reviews")
 public class Review implements Serializable{
     
     private String workspaceType;
