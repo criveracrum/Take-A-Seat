@@ -1,4 +1,4 @@
-package edu.depaul.se452.group4.takeaseat.demo.Featured;
+package edu.depaul.se452.group4.takeaseat.demo.featured;
 
 
 import java.io.Serializable;
