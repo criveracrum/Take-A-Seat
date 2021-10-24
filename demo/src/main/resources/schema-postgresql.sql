@@ -2,10 +2,10 @@ DROP TABLE IF EXISTS reservations;
 DROP TABLE IF EXISTS spaces;
 DROP TABLE IF EXISTS building;
 DROP TABLE IF EXISTS prices;
-DROP TABLE IF EXISTS Amenities;
+DROP TABLE IF EXISTS amenities;
 DROP TABLE IF EXISTS workspace;
-DROP TABLE IF EXISTS Employee;
-DROP TABLE IF EXISTS Team;
+DROP TABLE IF EXISTS employee;
+DROP TABLE IF EXISTS team;
 CREATE TABLE reservations (
     id serial PRIMARY KEY NOT NULL,
     reservation_num varchar(10),
@@ -26,7 +26,7 @@ CREATE TABLE prices (
     id serial PRIMARY KEY NOT NULL,
     price SMALLINT
 );
-CREATE TABLE Amenities(
+CREATE TABLE amenities(
     amenityID serial PRIMARY KEY,
     amenityName VARCHAR(10)
 );
@@ -36,12 +36,12 @@ CREATE TABLE workspace(
     amenityID INT,
     maxSize INT NOT NULL
 );
-CREATE TABLE Employee(
+CREATE TABLE employee(
     id serial PRIMARY KEY,
     fullname VARCHAR(255),
     birthdate DATE
 );
-CREATE TABLE Team(
+CREATE TABLE team(
     id serial PRIMARY KEY,
     teamName VARCHAR(20),
     employeeCount INT
