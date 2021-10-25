@@ -1,4 +1,4 @@
-package edu.depaul.se452.group4.takeaseat.demo.amenities_;
+package edu.depaul.se452.group4.takeaseat.demo.amenities;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
