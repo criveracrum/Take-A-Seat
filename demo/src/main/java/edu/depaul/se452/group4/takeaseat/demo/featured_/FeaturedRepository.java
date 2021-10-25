@@ -1,4 +1,4 @@
-package edu.depaul.se452.group4.takeaseat.demo.featured;
+package edu.depaul.se452.group4.takeaseat.demo.featured_;
 
 import java.util.List;
 
