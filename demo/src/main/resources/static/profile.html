@@ -28,7 +28,7 @@
     </nav>
     <main class="page lanidng-page">
         <section class="portfolio-block block-intro" style="width: 900;">
-            <h2 class="text-center" style="width: 900;padding: 37px;">Profile</h2>
+            <h2 class="text-center" style="width: 900;padding: 37px;">Log In</h2>
             <div class="container">
                 <p style="font-size: 19px;"></p>
             </div>
@@ -36,7 +36,12 @@
                 <input class="form-control" type="text" placeholder="Name">
               <input class="form-control" type="text" placeholder="Employee ID">
                 </select>
-                <button class="btn btn-primary" type="button" style="margin: 20px;padding: 3px 16px;">Log In</button><br>
+                <!-- If the login info matches a user in the employee repo, 
+                    the button will direct to the profile overview page.
+                    Otherwise it will take you to the same page   -->
+                    <a class="nav-link" href="editEmployee.html">
+                    <button class="btn btn-primary" type="button" style="margin: 20px;padding: 3px 16px;">Log In</button><br>
+                    </a>
                 <a class="nav-link" href="addEmployee.html"><input type="button" class="btn" value="New User Form"></a>
               </form>
         </section>

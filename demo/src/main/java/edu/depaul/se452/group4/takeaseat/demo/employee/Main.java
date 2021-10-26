@@ -10,16 +10,16 @@ import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class Main {
-  
+
   public static void main(String[] args) {
     SpringApplication.run(Main.class, args);
-  }  
+  }
 
   @Bean
   public CommandLineRunner showEmployees(EmployeeRepository repository) {
     return (args) -> {
-      
-      // fetch all Students
+
+      // fetch all Employees
       System.out.println("Employee found with findAll():");
       System.out.println("-------------------------------");
       repository.findAll().forEach((employee) -> {
@@ -29,9 +29,8 @@ public class Main {
     };
   }
 
-
   @Bean
-  public CommandLineRunner addStudent(EmployeeRepository repository) {
+  public CommandLineRunner addEmployee(EmployeeRepository repository) {
     return (args) -> {
       // fetch all Course
       System.out.println("Before Jefferson: " + repository.count());
