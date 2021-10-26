@@ -23,3 +23,11 @@ services:
         restart: always
         ports:
             - 27017:27017
+    # web:
+    #     container_name: proj-tomcat
+    #     image: tomcat
+    #     volumes: 
+    #         - "../build/libs/web-0.0.1-SNAPSHOT.war:/usr/local/tomcat/webapps/webconcept.war"
+    #     restart: always
+    #     ports:
+    #         - 8080:8080
