@@ -1,7 +1,8 @@
 package edu.depaul.se452.group4.takeaseat.demo.employee;
 
-import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.repository.CrudRepository;
 
-public interface EmployeeRepository extends JpaRepository<Employee, Long> {
+public interface EmployeeRepository extends CrudRepository<Employee, Long> {
+
 }
 

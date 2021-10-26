@@ -6,6 +6,10 @@ DROP TABLE IF EXISTS amenities;
 DROP TABLE IF EXISTS workspace;
 DROP TABLE IF EXISTS employee;
 DROP TABLE IF EXISTS team;
+DROP SEQUENCE IF EXISTS hibernate_sequence;
+
+CREATE SEQUENCE hibernate_sequence START WITH 100 INCREMENT BY 1;
+
 CREATE TABLE reservations (
     id serial PRIMARY KEY NOT NULL,
     reservation_num varchar(10),

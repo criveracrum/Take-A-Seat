@@ -1,25 +1,25 @@
 package edu.depaul.se452.group4.takeaseat.demo.employee;
 
-import java.time.*;
+import java.io.Serializable;
+import java.sql.Date;
 import javax.persistence.*;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 import lombok.Data;
 
 @Data
 @Entity
-public class Employee {
+public class Employee implements Serializable{
   @Id // primary key
   @GeneratedValue
   private long id;
 
-  @Column(name = "name")
-  private String name;
+  @Column(name = "fullname")
+  public String name;
 
   @Column(name = "birthdate")
-  private LocalDate birthdate;
+  public Date birthdate;
 
 }
