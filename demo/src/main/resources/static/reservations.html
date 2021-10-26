@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
     <link rel="stylesheet" href="assets/css/styles.min.css">
+    <link rel="stylesheet" href="assets/css/reservations.min.css">
 </head>
 
 <body>
@@ -21,20 +22,6 @@
                     <li class="nav-item"><a class="nav-link" href="newsfeed.html">Newsfeed</a></li>
                     <li class="nav-item"><a class="nav-link active" href="reservations.html">Reservations</a></li>
                     <li class="nav-item"><a class="nav-link" href="spaces.html">Spaces</a></li>
-                    <li class="nav-item"><a class="nav-link" href="profile.html"> <img width="25" height="25" src="assets/img/profile.jpg"> </a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-success bg-gradient portfolio-navbar gradient">
-        <div class="container">
-            <h1>Take-A-Seat</h1>
-            <div class="collapse navbar-collapse" id="navbarNav-2">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="newsfeed.html">Newsfeed</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="reservations.html">Reservations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="workspaces.html">Workspaces</a></li>
                     <li class="nav-item"><a class="nav-link" href="profile.html"> <img width="25" height="25" src="assets/img/profile.jpg"> </a></li>
                 </ul>
             </div>
@@ -60,6 +47,58 @@
                     </optgroup>
                 </select><button class="btn btn-primary" type="button" style="margin: 33px;padding: 3px 16px;">Submit</button></form>
         </section>
+        <h1> Existing Reservations </h1>
+        <div class="container mt-5">
+            <div class="d-flex justify-content-center row">
+                <div class="col-md-10">
+                    <div class="rounded">
+                        <div class="table-responsive table-borderless">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                    
+                                        <th>Reservation #</th>
+                                        <th>Team/Employee</th>
+                                        <th>Status</th>
+                                        <th>Date</th>
+                                        <th>Created</th>
+                                        <th></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-body">
+                                    <tr class="cell-1">
+                                        <td>#13487</td>
+                                        <td>Gasper Antunes</td>
+                                        <td>Upcoming </td>
+                                        <td>Fri. Oct. 29</td>
+                                        <td>Mon. Oct. 25</td>
+                                        <td><i class="fa fa-ellipsis-h text-black-50"></i></td>
+                                    </tr>
+                                    <tr class="cell-1">
+                                       
+                                        <td>#13453</td>
+                                        <td>Dev Team</td>
+                                        <td>Past </td>
+                                        <td>Fri. Oct. 22</td>
+                                        <td>Mon. Oct. 18</td>
+                                        <td><i class="fa fa-ellipsis-h text-black-50"></i></td>
+                                    </tr>
+                                    <tr class="cell-1">
+                                        
+                                        <td>#13498</td>
+                                        <td>Trashes Habard</td>
+                                        <td>Past </td>
+                                        <td>Fri. Oct. 22</td>
+                                        <td>Mon. Oct. 18</td>
+                                        <td><i class="fa fa-ellipsis-h text-black-50"></i></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
