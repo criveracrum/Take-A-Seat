@@ -39,7 +39,10 @@ public class Reservation {
     @Column(name="creator_id")
     private long creatorID;
 
-    @Column(name="workspace_type")
-    private String workspaceType;
+    @Column(name="space_type")
+    private String spaceType;
+
+    @Column(name="space_id")
+    private long spaceID;
     
 }
