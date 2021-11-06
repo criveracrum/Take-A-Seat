@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("reservation")
+@RequestMapping("/reservations")
 public class ReservationController {
 
     @Autowired
@@ -24,5 +24,5 @@ public class ReservationController {
 
     }
     
-    
+
 }

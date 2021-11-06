@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <head th:replace="/fragments/header :: common-header">    
+</head>
+
+<body>
+    <div th:replace="/fragments/header :: header"></div>  
+    <main class="page lanidng-page">
+        <section class="portfolio-block block-intro" style="width: 900;">
+            <h2 class="text-center" style="width: 900;padding: 37px;">Reservations</h2>
+            <div class="container">
+                <p style="font-size: 19px;"></p>
+            </div>
+            <form><input class="form-control" type="text" placeholder="Name"><input class="form-control" type="date"><select class="form-select">
+                    <optgroup label="Workspaces">
+                        <option value="12" selected="">Workspace1</option>
+                        <option value="13">Workspace 2</option>
+                        <option value="14">Workspace 3</option>
+                    </optgroup>
+                </select><select class="form-select">
+                    <optgroup label="Amenities">
+                        <option value="12" selected="">Coffee Maker</option>
+                        <option value="13">Toaster</option>
+                        <option value="14">Microwave</option>
+                    </optgroup>
+                </select><button class="btn btn-primary" type="button" style="margin: 33px;padding: 3px 16px;">Submit</button></form>
+        </section>
+        <h1> Existing Reservations </h1>
+        <div class="container mt-5">
+            <div class="d-flex justify-content-center row">
+                <div class="col-md-10">
+                    <div class="rounded">
+                        <div class="table-responsive table-borderless">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                    
+                                        <th scope="col">Reservation #</th>
+                                        <th scope="col">Date of Reservation</th>
+                                        <th scope="col">Created</th>
+                                        <th scope="col">Creator ID</th>
+                                        <th scope="col">Space Type</th>
+                                        <th scope="col">Space ID</th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-body">
+                                    <tr th:if="${reservations.empty}">
+                                        <td colspan="2"> No Pending Reservations </td>
+                                    </tr>
+                                    <tr scope="row" th:each="reservation : ${reservations}">
+                                        <td th:text="${reservation.reservationNumber}"></td>
+                                        <td th:text="${reservation.reservationDateTime}"></td>
+                                        <td th:text="${reservation.createdDateTime}"></td>
+                                        <td th:text="${reservation.creatorID}"></td>
+                                        <td th:text="${reservation.spaceType}"></td>
+                                        <td th:text="${reservation.spaceID}"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>
