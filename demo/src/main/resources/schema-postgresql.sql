@@ -16,7 +16,8 @@ CREATE TABLE reservations (
     date_created timestamp default current_timestamp,
     res_date timestamp,
     creator_id INT NOT NULL,
-    workspace_type varchar
+    space_type varchar,
+    space_id INT NOT NULL
 );
 CREATE TABLE spaces (
     id serial PRIMARY KEY NOT NULL,
@@ -32,12 +33,11 @@ CREATE TABLE prices (
 );
 CREATE TABLE amenities(
     amenityID serial PRIMARY KEY,
-    amenityName VARCHAR(10)
+    amenityName VARCHAR(20)
 );
 CREATE TABLE workspace(
     workspaceID serial PRIMARY KEY,
-    workspacename VARCHAR(10),
-    amenityID INT,
+    workspacename VARCHAR(20),
     maxSize INT NOT NULL
 );
 CREATE TABLE employee(
