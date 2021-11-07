@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/reservations")
+@RequestMapping("reservations")
 public class ReservationController {
 
     @Autowired
@@ -23,6 +23,13 @@ public class ReservationController {
         return "reservations/list";
 
     }
+
+    @GetMapping("/create")
+    public String showAddForm(Reservation reservation) {
+        return "reservations/create-reservation";
+    }
+
+    
     
 
 }
