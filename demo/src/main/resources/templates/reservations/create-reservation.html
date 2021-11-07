@@ -12,17 +12,27 @@
     <div class="container">
         <p style="font-size: 19px;"></p>
     </div>
-    <form><input class="form-control" type="text" placeholder="Name"><input class="form-control" type="date"><select class="form-select">
-            <optgroup label="Workspaces">
-                <option value="12" selected="">Workspace1</option>
-                <option value="13">Workspace 2</option>
-                <option value="14">Workspace 3</option>
-            </optgroup>
-        </select><select class="form-select">
-            <optgroup label="Amenities">
-                <option value="12" selected="">Coffee Maker</option>
-                <option value="13">Toaster</option>
-                <option value="14">Microwave</option>
-            </optgroup>
-        </select><button class="btn btn-primary" type="button" style="margin: 33px;padding: 3px 16px;">Submit</button></form>
+    <form action="#" th:action="@{/reservations/create}" th:object="${reservation}" method="post">
+        <input class="form-control" type="text" th:field="*{creatorID}"  placeholder="Creator ID" >
+        <input class="form-control" type="datetime-local" th:field="*{reservationDateTime}">
+        <select class="form-select" th:field="*{spaceType}" >
+                <option th:value="'WORKSPACE'" th:text="WORKSPACE"></option>
+                <option th:value="'AMENITY'" th:text="AMENITY"></option>
+        </select>
+        <select class="form-select" th:field="*{spaceID}">
+            <option th:each="i : ${workspaces}" th:value="${i.id}" th:text="${i}" >
+
+            </option>
+            <option  th:each="i : ${amenities}" th:value="${i.id}" th:text="${i}" >
+            </option>
+        </select>
+     
+        <input class="form-control" type="text" th:field="*{spaceID}"  placeholder="Space ID">
+        <button class="btn btn-primary" type="submit" value="Add"style="margin: 33px;padding: 3px 16px;">Submit</button>
+        <div class="row">
+            <div class="col-md-6 mt-5">
+                <input type="submit" class="btn btn-primary" value="Add">
+            </div>
+        </div> 
+    </form>
 </section>
