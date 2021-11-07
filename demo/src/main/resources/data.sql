@@ -3,7 +3,7 @@
 
 
 
-INSERT INTO amenities (amenityName) VALUES
+INSERT INTO amenities (amenity_name) VALUES
     ('Coffee Machine'),
     ('Espresso Machine'),
     ('Microwave'),
@@ -15,7 +15,7 @@ INSERT INTO amenities (amenityName) VALUES
 
     
 
-INSERT INTO workspace(workspacename, maxSize) VALUES
+INSERT INTO workspace(workspacename, max_size) VALUES
  ('Desk', 1 ),
  ('Desk', 1 ),
  ('Desk', 1 ),

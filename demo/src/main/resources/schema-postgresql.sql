@@ -32,13 +32,13 @@ CREATE TABLE prices (
     price SMALLINT
 );
 CREATE TABLE amenities(
-    amenityID serial PRIMARY KEY,
-    amenityName VARCHAR(20)
+    id serial PRIMARY KEY,
+    amenity_name VARCHAR(20)
 );
 CREATE TABLE workspace(
-    workspaceID serial PRIMARY KEY,
+    id serial PRIMARY KEY,
     workspacename VARCHAR(20),
-    maxSize INT NOT NULL
+    max_size INT NOT NULL
 );
 CREATE TABLE employee(
     id serial PRIMARY KEY,
