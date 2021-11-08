@@ -7,20 +7,7 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-success bg-gradient portfolio-navbar gradient">
-        <div class="container">
-            <h1>Take-A-Seat</h1>
-            <div class="collapse navbar-collapse" id="navbarNav-2">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="newsfeed.html">Newsfeed</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/reservations">Reservations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="spaces.html">Spaces</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="profile.html"> <img width="25" height="25" src="assets/img/profile.jpg"> </a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <div th:replace="/fragments/header :: header"></div>  
     <main class="page lanidng-page">
         <section class="portfolio-block block-intro" style="width: 900;">
             <h2 class="text-center" style="width: 900;padding: 37px;">Log In</h2>
