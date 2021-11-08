@@ -11,6 +11,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -63,6 +64,26 @@ public class ReservationController {
         return "redirect:/reservations";
     }
     
+    @GetMapping("/delete/{id}")
+    public String delete(@PathVariable("id") String resId, Model model) {
+        resService.deleteById(resId);
+        return "redirect:/reservations";
+    } 
+    @GetMapping("/edit/{id}")
+    public String showEdit(@PathVariable("id") String resId, Model model) {
+        Reservation reservation = resService.findById(resId);
+        model.addAttribute("reservation", reservation);
+        return "reservations/edit-reservation";  
+    }
+    @PostMapping("/edit")
+    public String update(@Valid Reservation reservation, BindingResult result) {
+        if (result.hasErrors()) {
+        return "reservations/create-reservation";
+        }
+
+        resService.update(reservation);
+        return "redirect:/reservations";
+    }
     
 
 }
