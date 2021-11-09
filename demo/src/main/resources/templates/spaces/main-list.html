@@ -1,42 +1,14 @@
 <!DOCTYPE html>
-<html>
-
-
+<html xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
-    <title>Home - Brand</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
-    <link rel="stylesheet" href="assets/css/styles.min.css">
-    <link rel="stylesheet" href="assets/css/styles2.min.css">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <head th:replace="/fragments/header :: common-header">  
 
 </head>
 
-<body>
-  
-    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-success bg-gradient portfolio-navbar gradient">
-        <div class="container">
-            <h1>Take-A-Seat</h1>
-            <div class="collapse navbar-collapse" id="navbarNav-2">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="newsfeed.html">Newsfeed</a></li>
-                    <li class="nav-item"><a class="nav-link" href="reservations.html">Reservations</a></li>
-                    <li class="nav-item"><a class="nav-link" href="workspaces.html">Workspaces</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="profile.html"> <img width="25" height="25" src="assets/img/profile.jpg"> </a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
- 
-          
-<div class="search">
+<div th:replace="/fragments/header :: header"></div>  
+<main class="search"></main>
             <input type="text"  placeholder="Filter Spaces...">  
-            </div>
         
     
 

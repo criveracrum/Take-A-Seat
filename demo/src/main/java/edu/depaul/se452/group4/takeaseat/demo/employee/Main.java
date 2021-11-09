@@ -15,7 +15,7 @@ public class Main {
     SpringApplication.run(Main.class, args);
   }
 
-  @Bean
+  //@Bean
   public CommandLineRunner showEmployees(EmployeeRepository repository) {
     return (args) -> {
 
@@ -29,7 +29,7 @@ public class Main {
     };
   }
 
-  @Bean
+  //@Bean
   public CommandLineRunner addEmployee(EmployeeRepository repository) {
     return (args) -> {
       // fetch all Course
@@ -43,7 +43,7 @@ public class Main {
     };
   }
 
-  @Bean
+//@Bean
   public CommandLineRunner updateEmployee(EmployeeRepository repository) {
     return (args) -> {
       // fetch all Course

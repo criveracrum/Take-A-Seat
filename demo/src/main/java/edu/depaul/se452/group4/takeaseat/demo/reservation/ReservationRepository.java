@@ -1,11 +1,11 @@
 package edu.depaul.se452.group4.takeaseat.demo.reservation;
 
 import java.util.List;
-import org.springframework.data.repository.CrudRepository;
+
+import org.springframework.data.jpa.repository.JpaRepository;
 
 
-
-public interface ReservationRepository extends CrudRepository<Reservation, Long>{
+public interface ReservationRepository extends JpaRepository<Reservation, Long>{
 
     @Override
     List<Reservation> findAll();

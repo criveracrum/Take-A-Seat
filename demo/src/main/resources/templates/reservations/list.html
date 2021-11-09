@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <head th:replace="/fragments/header :: common-header">  
+
+</head>
+
+<body>
+    <div th:replace="/fragments/header :: header"></div>  
+    <div class="container mt-6">
+        <h1> Create New Reservation </h1>
+    <div class="col text-center">
+        
+    <a class="btn btn-primary" href="/reservations/create">
+        Create
+    </a>
+    </div>
+    </div>
+    <main class="page lanidng-page">
+        
+        
+        <h1> Existing Reservations </h1>
+        <div class="container mt-5">
+            <div class="d-flex justify-content-center row">
+                <div class="col-md-10">
+                    <div class="rounded">
+                        <div class="table-responsive table-borderless">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                    
+                                        <th scope="col">Reservation #</th>
+                                        <th scope="col">Date of Reservation</th>
+                                        <th scope="col">Created</th>
+                                        <th scope="col">Creator ID</th>
+                                        <th scope="col">Space Type</th>
+                                        <th scope="col">Space ID</th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-body">
+                                    <tr th:if="${reservations.empty}">
+                                        <td colspan="2"> No Pending Reservations </td>
+                                    </tr>
+                                    <tr scope="row" th:each="reservation : ${reservations}">
+                                        <td th:text="${reservation.reservationNumber}"></td>
+                                        <td th:text="${reservation.reservationDateTime}"></td>
+                                        <td th:text="${reservation.createdDateTime}"></td>
+                                        <td th:text="${reservation.creatorID}"></td>
+                                        <td th:text="${reservation.spaceType}"></td>
+                                        <td th:text="${reservation.spaceID}"></td>
+                                        <td><a th:href="@{/reservations/edit/{id}(id=${reservation.id})}" class="btn btn-info">Edit</a></td>
+                                        <td><a th:href="@{/reservations/delete/{id}(id=${reservation.id})}" class="btn btn-danger">Delete</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>

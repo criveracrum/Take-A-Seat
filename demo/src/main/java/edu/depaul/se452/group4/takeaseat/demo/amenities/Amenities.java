@@ -15,9 +15,8 @@ public class Amenities {
     @GeneratedValue
     private Long id;
 
-
         
-    @Column(name = "amenityName")
+    @Column(name = "amenity_name")
     private String amenityName;
 
 

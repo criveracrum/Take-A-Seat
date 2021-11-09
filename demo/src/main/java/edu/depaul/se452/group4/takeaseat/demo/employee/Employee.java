@@ -11,6 +11,7 @@ import lombok.Data;
 
 @Data
 @Entity
+@Table(name = "employee")
 public class Employee implements Serializable{
   @Id // primary key
   @GeneratedValue
