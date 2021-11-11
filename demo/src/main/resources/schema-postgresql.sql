@@ -7,9 +7,7 @@ DROP TABLE IF EXISTS workspace;
 DROP TABLE IF EXISTS employee;
 DROP TABLE IF EXISTS team;
 DROP SEQUENCE IF EXISTS hibernate_sequence;
-
 CREATE SEQUENCE hibernate_sequence START WITH 100 INCREMENT BY 1;
-
 CREATE TABLE reservations (
     id serial PRIMARY KEY NOT NULL,
     reservation_num varchar(10),
@@ -42,6 +40,7 @@ CREATE TABLE workspace(
 );
 CREATE TABLE employee(
     id serial PRIMARY KEY,
+    emp_id VARCHAR(10),
     fullname VARCHAR(255),
     birthdate DATE
 );
