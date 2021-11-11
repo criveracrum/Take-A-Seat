@@ -8,69 +8,107 @@
 
 <div th:replace="/fragments/header :: header"></div>  
 
-<div class="search">
-            <input type="text"  placeholder="Filter Spaces..."> 
-          </div> 
           
- <main class="page landing-page">
-        <section class="portfolio-block block-intro">
-            <h1>Workspaces</h1>
-            <div class="container">
-                <div class="about-me"></div>
+<body>
+  <div th:replace="/fragments/header :: header"></div>  
+
+  <div class="search">
+    <input type="text"  placeholder="Filter Spaces..."> 
+  </div> 
+  <div class="container mt-6">
+      <h1> Spaces </h1>
+  </div>
+ 
+  <main class="page lanidng-page">
+    
+      <h1> Workspaces </h1>
+      <div class="container mt-5">
+          <div class="d-flex justify-content-center row">
+              <div class="col-md-10">
+                  <div class="rounded">
+                      <div class="table-responsive table-borderless">
+                          <table class="table">
+                              <thead>
+                                  <tr>
+                                  
+                                      <th scope="col">Workspace ID</th>
+                                      <th scope="col">Workspace Name</th>
+                                      <th scope="col">Max Size</th>
+                                      <th scope="col"></th>
+                                      <th scope="col"></th>
+                                  </tr>
+                              </thead>
+                              <tbody class="table-body">
+                                  <tr th:if="${workspaces.empty}">
+                                      <td colspan="2"> No Workspaces... </td>
+                                  </tr>
+                                  <tr scope="row" th:each="workspace : ${workspaces}">
+                                      <td th:text="${workspace.id}"></td>
+                                      <td th:text="${workspace.workspacename}"></td>
+                                      <td th:text="${workspace.maxSize}"></td>
+                                      <td><a th:href="@{#}" class="btn btn-info">Edit</a></td>
+                                    <td><a th:href="@{#}" class="btn btn-danger">Delete</a></td>
+                                  </tr>
+                              </tbody>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <h1> Amenities </h1>
+      <div class="container mt-5">
+        <div class="d-flex justify-content-center row">
+            <div class="col-md-10">
+                <div class="rounded">
+                    <div class="table-responsive table-borderless">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                
+                                    <th scope="col">Amenity ID</th>
+                                    <th scope="col">Amenity Name</th>
+                                    <th scope="col"></th>
+                                    <th scope="col"></th>
+                                </tr>
+                            </thead>
+                            <tbody class="table-body">
+                                <tr th:if="${amenities.empty}">
+                                    <td colspan="2"> No Amenities... </td>
+                                </tr>
+                                <tr scope="row" th:each="amenity : ${amenities}">
+                                    <td th:text="${amenity.id}"></td>
+                                    <td th:text="${amenity.amenityName}"></td>
+                                    <td><a th:href="@{#}" class="btn btn-info">Edit</a></td>
+                                    <td><a th:href="@{#}" class="btn btn-danger">Delete</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-            <table class="w3-table w3-striped w3-border">
-                <tr class="header">
-                  <th style="width:100%;">Name</th>
-                  <th style="width:40%;">Capacity</th>
-                    <tbody>
-                        <tr th:if="${Workspaces.empty}">
-                          <td colspan="2"> No Workspaces Available </td>
-                        </tr>
-                        <tr scope="row" th:each="Name : ${Workspaces}">
-                            <td th:text="${Name.workspacename}"></td>
-                            <td th:text="${Name.maxSize}"></td>
-                      </tbody>           
-              </table>
-              
-        </section>
-        <section class="portfolio-block photography"></section>
-    </main>
-    <main class="page lanidng-page">
-        <section class="portfolio-block photography"></section>
-    </main>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
-    <script src="assets/js/script.min.js"></script>
+        </div>
+    </div>
+    <div class="container mt-5">
+      <h3>View Options</h3>
+      <input type="radio" class="btn-check" name="options" id="option1"  checked>
+      <label class="btn btn-secondary" for="option1">All</label>
 
-    <main class="page lanidng-page">
-        <section class="portfolio-block block-intro">
-            <h1>Amenities</h1>
-            <div class="container">
-              <div class="about-me"></div>
-            </div>
-            <table class="w3-table w3-striped w3-border">
-              <tr class="header">
-                <th style="width:100%;">Name</th>
-                <tbody>
-                  <tr th:if="${Amenities.empty}">
-                    <td colspan="2"> No Amenities Available </td>
-                  </tr>
-              <tr scope="row" th:each="Name : ${Amenities}">
-                <td th:text="${Name.amenityName}"></td>
-              </tbody>
-              </table>
-        </section>
-        <section class="portfolio-block photography"></section>
-    </main>
-    <main class="page lanidng-page">
-        <section class="portfolio-block photography"></section>
-    </main>
-    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
-    <script src="assets/js/script.min.js"></script>
+      <input type="radio" class="btn-check" name="options" id="option2" >
+      <label class="btn btn-secondary" for="option2">Workspace</label>
 
+      <input type="radio" class="btn-check" name="options" id="option3"  >
+      <label class="btn btn-secondary" for="option3">Amenities</label>
 
-
+      <input type="radio" class="btn-check" name="options" id="option4" >
+      <label class="btn btn-secondary" for="option4">Spaces</label>
+      
+    </div>
+  </main>
+  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+  <script src="assets/js/script.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
 
 </body>
 
