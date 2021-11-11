@@ -24,9 +24,10 @@ public class SpacesController {
     private WorkspaceRepository workspaceRepository;
 
     @GetMapping
-    public String showAll(Model model) {
-        
-        
+    public String showAllWorkspaces(Model model) {
+        model.addAttribute("Spaces", new Spaces());
+        model.addAttribute("Workspaces", workspaceRepository.findAll());
+        model.addAttribute("Amenities", amenitiesRepository.findAll());
         return "spaces/main-list";
     }
 }

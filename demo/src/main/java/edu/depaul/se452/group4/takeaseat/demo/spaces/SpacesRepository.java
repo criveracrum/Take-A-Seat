@@ -7,4 +7,5 @@ public interface SpacesRepository extends CrudRepository<Spaces, Long>{
 
     @Override
     List<Spaces> findAll();
+
 }
