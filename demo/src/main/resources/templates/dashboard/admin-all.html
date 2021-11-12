@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <head th:replace="/fragments/header :: common-header">  
+
+</head>
+
+<body>
+    <div th:replace="/fragments/header :: header"></div>  
+    <div class="container mt-6">
+        <h1> Control Dashboard </h1>
+    <div class="col text-center">
+    <div class="container mt-5">
+        <h3>Options</h3>
+        <input   type="radio" class="btn-check" name="options" id="option1" >
+        <label   class="btn btn-secondary" for="option1"><a th:href="@{./reservations}">Reservations</a></label>
+    
+        <input type="radio" class="btn-check" name="options" id="option2" >
+        <label class="btn btn-secondary" for="option2"><a th:href="@{./spaces/workspace-list}">Workspaces</a></label>
+    
+        <input type="radio" class="btn-check" name="options" id="option3" >
+        <label class="btn btn-secondary" for="option3"><a th:href="@{./spaces/amenity-list}">Amenities</a></label>
+
+    
+        <input type="radio" class="btn-check" name="options" id="option5" >
+        <label class="btn btn-secondary" for="option4"><a th:href="@{../#}">Teams</a></label>
+        
+        </div>
+</body>
+
+</html>
