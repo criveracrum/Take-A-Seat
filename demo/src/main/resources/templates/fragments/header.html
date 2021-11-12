@@ -11,25 +11,28 @@
     <link rel="stylesheet" th:href="@{/assets/css/styles.min.css}" href="assets/css/styles.min.css">
     <link rel="stylesheet" th:href="@{/assets/css/index.min.css}" href="assets/css/index.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" th:href="@{/assets/css/newsfeed.min.css}">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     
 </head>
 
-<body>
-    <div th:fragment="header">
+
+<div th:fragment="header">
     <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-success bg-gradient portfolio-navbar gradient">
         <div class="container">
             <h1>Take-A-Seat</h1>
             <div class="collapse navbar-collapse" id="navbarNav-2">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item"><a class="nav-link active" th:href="@{/}" >Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="newsfeed.html">Newsfeed</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/newsfeed">Newsfeed</a></li>
                     <li class="nav-item"><a class="nav-link" href="/reservations">Reservations</a></li>
                     <li class="nav-item"><a class="nav-link" href="/spaces">Spaces</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
                     <li class="nav-item"><a class="nav-link" href="/employees"> <img width="25" height="25" th:src="@{/assets/img/profile.jpg}"> </a></li>
                 </ul>
             </div>
         </div>
     </nav>
 </div>
-</body>
+
 </html>
