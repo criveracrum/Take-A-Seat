@@ -1,11 +1,15 @@
 package edu.depaul.se452.group4.takeaseat.demo.spaces;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import edu.depaul.se452.group4.takeaseat.demo.amenities.Amenities;
+import edu.depaul.se452.group4.takeaseat.demo.workspace.Workspace;
 import edu.depaul.se452.group4.takeaseat.demo.amenities.AmenitiesRepository;
 import edu.depaul.se452.group4.takeaseat.demo.workspace.WorkspaceRepository;
 
@@ -24,9 +28,10 @@ public class SpacesController {
     private WorkspaceRepository workspaceRepository;
 
     @GetMapping
-    public String showAll(Model model) {
-        
-        
+    public String showAllWorkspaces(Model model) {
+        model.addAttribute("spaces", spacesRepository.findAll());
+        model.addAttribute("workspaces", workspaceRepository.findAll());
+        model.addAttribute("amenities", amenitiesRepository.findAll());
         return "spaces/main-list";
     }
 }
