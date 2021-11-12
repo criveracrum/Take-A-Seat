@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<style> 
+.timeline-time {
+    display: flex;  
+    flex-wrap: wrap;
+    }
+</style>
+<head>
+    <head th:replace="/fragments/header :: common-header">  
+
+</head>
+
+<body>
+    <div th:replace="/fragments/header :: header"></div> 
+    <main class="page landing-page">
+        <h1> Newsfeed </h1>
+        <div class="container bootstrap snippets bootdeys">
+            <div class="col-md-7 col-md-offset-2">
+                <div class="panel panel-body">
+                    <!-- Timeline -->
+                    <!--===================================================-->
+                    <div class="timeline">
+            
+                        <!-- Timeline header -->
+                        <div class="timeline-header">
+                            <div class="timeline-header-title bg-success">Recent</div>
+                        </div>
+                        
+                        <div class="timeline-entry" th:each="item : ${newsfeed}">
+                            <div class="timeline-stat">
+                                <div class="timeline-icon bg-info"><i class="fa fa-building fa-lg"></i>
+                                </div>
+                            </div>
+                            <div class="timeline-label">
+                                <p class="mar-no pad-btm"><a class="btn-link text-semibold" th:text="Employee + ${item.creatorID}"></a> reserved
+                                </p>
+                                <p th:text="${item.workspaceType}"></p>  
+                                <p th:text="'Reservation#' + ${item.reservationNum}"></p>
+                                <p class="timeline-time" th:text="'TIME: ' + ${item.createdDateTime}"></p>    				
+                            </div>
+                        </div>
+                    <!--===================================================-->
+                    <!-- End Timeline -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>

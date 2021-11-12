@@ -31,6 +31,9 @@ public class ReservationController {
     @Autowired
     private AmenitiesRepository amenityRepo;
 
+    @Autowired
+    private NewsfeedRepository newsfeedRepo;
+
     @GetMapping
     public String showAllReservations(Model model) {
         List<Reservation> resList = resService.findAll();
@@ -59,9 +62,18 @@ public class ReservationController {
         LocalDateTime now = LocalDateTime.now();  
         reservation.setCreatedDateTime(now);
         resService.update(reservation);
-        
-          model.addAttribute("reservations", resService.findAll());
+        addToNewsFeed(reservation);
+        model.addAttribute("reservations", resService.findAll());
         return "redirect:/reservations";
+    }
+    public void addToNewsFeed(Reservation reservation){
+        Newsfeed item = new Newsfeed();
+        item.setReservationDateTime(reservation.getReservationDateTime());
+        item.setCreatorID(reservation.getCreatorID());
+        item.setCreatedDateTime(reservation.getCreatedDateTime());
+        item.setReservationNum(reservation.getReservationNumber());
+        item.setWorkspaceType(reservation.getSpaceType());
+        newsfeedRepo.save(item);
     }
     
     @GetMapping("/delete/{id}")
