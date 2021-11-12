@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS building;
 DROP TABLE IF EXISTS prices;
 DROP TABLE IF EXISTS amenities;
 DROP TABLE IF EXISTS workspace;
-DROP TABLE IF EXISTS employee;
+DROP TABLE IF EXISTS employees;
 DROP TABLE IF EXISTS team;
 DROP SEQUENCE IF EXISTS hibernate_sequence;
 CREATE SEQUENCE hibernate_sequence START WITH 100 INCREMENT BY 1;
@@ -38,7 +38,7 @@ CREATE TABLE workspace(
     workspacename VARCHAR(20),
     max_size INT NOT NULL
 );
-CREATE TABLE employee(
+CREATE TABLE employees(
     id serial PRIMARY KEY,
     emp_id VARCHAR(10),
     fullname VARCHAR(255),

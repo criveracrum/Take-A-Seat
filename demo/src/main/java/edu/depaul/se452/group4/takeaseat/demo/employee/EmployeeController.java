@@ -1,5 +1,7 @@
 package edu.depaul.se452.group4.takeaseat.demo.employee;
 
+import java.util.List;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,22 +28,22 @@ public class EmployeeController {
 
     }
 
-    @GetMapping
+    @GetMapping("/list")
     public ModelAndView showEmployees() {
-        ModelAndView mv = new ModelAndView("list-employees");
+        ModelAndView mv = new ModelAndView("employees/list-employees");
         mv.addObject("employees", employeeService.findAll());
         return mv;
     }
 
     @GetMapping("/add")
     public String showSignUpForm(Employee employee) {
-        return "add-employee";
+        return "employees/add-employee";
     }
 
     @PostMapping
     public String add(@Valid Employee employee, BindingResult result, Model model) {
         if (result.hasErrors()) {
-            return "add-employee";
+            return "employees/add-employee";
         }
 
         employeeService.update(employee);
@@ -53,13 +55,13 @@ public class EmployeeController {
     public String showEdit(@PathVariable("id") String employeeId, Model model) {
         Employee employee = employeeService.findById(employeeId);
         model.addAttribute("employee", employee);
-        return "edit-employee";
+        return "employees/edit-employee";
     }
 
     @PostMapping("/edit")
     public String update(@Valid Employee employee, BindingResult result) {
         if (result.hasErrors()) {
-            return "edit-employee";
+            return "employees/edit-employee";
         }
 
         employeeService.update(employee);
