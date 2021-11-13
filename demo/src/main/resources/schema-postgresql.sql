@@ -46,6 +46,6 @@ CREATE TABLE employees(
 );
 CREATE TABLE team(
     id serial PRIMARY KEY,
-    teamName VARCHAR(20),
-    employeeCount INT
+    teamname VARCHAR(20),
+    employeecount VARCHAR(3)
 )
