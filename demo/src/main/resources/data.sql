@@ -24,7 +24,8 @@ VALUES ('2', 'Tom Select', '1981-06-01'),
     ('4', 'Johnny Appleseed', '1972-07-30');
 INSERT INTO team(id, teamname, employeecount)
 VALUES ('404', 'Team not Found', '5'),
-    ('007', 'The Bonds', '2');
+    ('007', 'The Bonds', '2'),
+    ('452', 'Enterprise Computers', '15');
 INSERT INTO reservations(
         reservation_num,
         res_date,

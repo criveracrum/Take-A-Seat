@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <head th:replace="/fragments/header :: common-header">  
+
+</head>
+
+<body>
+    <div th:replace="/fragments/header :: header"></div>  
+    <main class="page lanidng-page">
+        <h2 class="text-center" style="width: 900;padding: 37px;">Manage Teams</h2>
+        <section class="portfolio-block block-intro" style="width: 900;">
+            <div class="container">
+            <div class="d-flex justify-content-center row">
+                <div th:switch="${teamreviews}" class="container"></div>
+                    <div class="col-sm-7">
+                        <div class="table-responsive">
+                            <table class="table caption-top">
+                                <caption>Team Reviews</caption>
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Team Name</th>
+                                        <th scope="col">reviewer</th> 
+                                        <th scope="col">review</th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-body">
+                                    <tr th:if="${teamreviews.empty}">
+                                        <td colspan="2"> No Reviews </td>
+                                    </tr>
+                                    <tr scope="row" th:each="review : ${teamreviews}">
+                                        <td th:text="${review.team_name}"></td>
+                                        <td th:text="${review.reviewer}"></td>
+                                        <td th:text="${review.review}"></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br>
+                            <a class="btn btn-info" href="/team/new">
+                                Add Review
+                            </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>
