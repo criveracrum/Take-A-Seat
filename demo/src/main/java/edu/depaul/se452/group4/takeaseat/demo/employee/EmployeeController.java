@@ -65,13 +65,13 @@ public class EmployeeController {
         }
 
         employeeService.update(employee);
-        return "redirect:/employees";
+        return "redirect:/employees/list";
     }
 
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable("id") String employeeId, Model model) {
         employeeService.deleteById(employeeId);
-        return "redirect:/employees";
+        return "redirect:/employees/list";
     }
 
 }
