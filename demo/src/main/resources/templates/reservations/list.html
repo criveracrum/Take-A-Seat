@@ -35,7 +35,7 @@
                                         <th scope="col">Created</th>
                                         <th scope="col">Creator ID</th>
                                         <th scope="col">Space Type</th>
-                                        <th scope="col">Space ID</th>
+                                        <th scope="col">Space Name</th>
                                         <th scope="col"></th>
                                         <th scope="col"></th>
                                     </tr>
@@ -50,7 +50,7 @@
                                         <td th:text="${reservation.createdDateTime}"></td>
                                         <td th:text="${reservation.creatorID}"></td>
                                         <td th:text="${reservation.spaceType}"></td>
-                                        <td th:text="${reservation.spaceID}"></td>
+                                        <td th:text="${reservation.spaces.spaceName}"></td>
                                         <td><a th:href="@{/reservations/edit/{id}(id=${reservation.id})}" class="btn btn-info">Edit</a></td>
                                         <td><a th:href="@{/reservations/delete/{id}(id=${reservation.id})}" class="btn btn-danger">Delete</a></td>
                                     </tr>

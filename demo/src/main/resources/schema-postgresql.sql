@@ -17,7 +17,7 @@ CREATE TABLE reservations (
     res_date timestamp,
     creator_id INT NOT NULL,
     space_type varchar,
-    space_id INT NOT NULL
+    space_id INT
 );
 
 CREATE TABLE building (
