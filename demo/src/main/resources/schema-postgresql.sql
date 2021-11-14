@@ -19,10 +19,7 @@ CREATE TABLE reservations (
     space_type varchar,
     space_id INT NOT NULL
 );
-CREATE TABLE spaces (
-    id serial PRIMARY KEY NOT NULL,
-    workspace_type varchar
-);
+
 CREATE TABLE building (
     building_id serial PRIMARY KEY NOT NULL,
     building_name varchar
@@ -31,14 +28,25 @@ CREATE TABLE prices (
     id serial PRIMARY KEY NOT NULL,
     price SMALLINT
 );
+
+CREATE TABLE spaces (
+    space_id serial PRIMARY KEY NOT NULL,
+    space_name VARCHAR(20),
+    workspace_type varchar
+);
+
 CREATE TABLE amenities(
     id serial PRIMARY KEY,
-    amenity_name VARCHAR(20)
+    space_id integer,
+    amenity_name VARCHAR(20),
+    workspace_type varchar
 );
 CREATE TABLE workspace(
     id serial PRIMARY KEY,
+    space_id integer ,
     workspacename VARCHAR(20),
-    max_size INT NOT NULL
+    max_size INT NOT NULL,
+    workspace_type varchar
 );
 CREATE TABLE employee(
     id serial PRIMARY KEY,
