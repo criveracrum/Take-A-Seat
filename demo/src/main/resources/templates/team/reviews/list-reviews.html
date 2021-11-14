@@ -17,30 +17,32 @@
                     <div class="col-sm-7">
                         <div class="table-responsive">
                             <table class="table caption-top">
-                                <caption>Team Reviews</caption>
+                                <caption>Manage Teams</caption>
                                 <thead>
                                     <tr>
-                                        <th scope="col">Team Name</th>
-                                        <th scope="col">reviewer</th> 
-                                        <th scope="col">review</th>
+                                        <th scope="col">Team ID </th>
+                                        <th scope="col">Team Name </th> 
+                                        <th scope="col">Employee Count</th>
                                         <th scope="col"></th>
                                         <th scope="col"></th>
                                     </tr>
                                 </thead>
                                 <tbody class="table-body">
                                     <tr th:if="${teamreviews.empty}">
-                                        <td colspan="2"> No Reviews </td>
+                                        <td colspan="2"> No active Teams </td>
                                     </tr>
                                     <tr scope="row" th:each="review : ${teamreviews}">
-                                        <td th:text="${review.team_name}"></td>
-                                        <td th:text="${review.reviewer}"></td>
-                                        <td th:text="${review.review}"></td>
+                                        <td th:text="${review.id}"></td>
+                                        <td th:text="${review.name}"></td>
+                                        <td th:text="${review.count}"></td>
+                                        <td><a th:href="@{/team/edit/{id}(id=${team.id})}" class="btn btn-info">Edit</a></td>
+                                        <td><a th:href="@{/team/delete/{id}(id=${team.id})}" class="btn btn-danger">Delete</a></td>
                                     </tr>
                                 </tbody>
                             </table>
                             <br>
-                            <a class="btn btn-info" href="/team/new">
-                                Add Review
+                            <a class="btn btn-info" href="/team/add">
+                                Create a team
                             </a>
                     </div>
                 </div>
