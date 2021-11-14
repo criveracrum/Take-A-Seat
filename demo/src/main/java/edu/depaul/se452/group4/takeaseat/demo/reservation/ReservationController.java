@@ -81,6 +81,7 @@ public class ReservationController {
         item.setCreatedDateTime(reservation.getCreatedDateTime());
         item.setReservationNum(reservation.getReservationNumber());
         item.setWorkspaceType(reservation.getSpaceType());
+        item.setWorkspaceName(reservation.getSpaces().getSpaceName());
         newsfeedRepo.save(item);
     }
     
