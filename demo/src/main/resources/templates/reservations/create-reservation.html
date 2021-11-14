@@ -15,19 +15,12 @@
     <form action="#" th:action="@{/reservations/create}" th:object="${reservation}" method="post">
         <input class="form-control" type="text" th:field="*{creatorID}"  placeholder="Creator ID" >
         <input class="form-control" type="datetime-local" th:field="*{reservationDateTime}">
-        <select class="form-select" th:field="*{spaceType}" >
-                <option th:value="'WORKSPACE'" th:text="WORKSPACE"></option>
-                <option th:value="'AMENITY'" th:text="AMENITY"></option>
-        </select>
-        <select class="form-select" th:field="*{spaceID}">
-            <option th:each="i : ${workspaces}" th:value="${i.id}" th:text="${i}" >
+        <select class="form-select" th:field="*{spaces}">
+        
+            <option th:each="i : ${spaces}" th:value="${i.id}" th:text="${i.spaceName}" >
 
             </option>
-            <option  th:each="i : ${amenities}" th:value="${i.id}" th:text="${i}" >
-            </option>
         </select>
-     
-        <input class="form-control" type="text" th:field="*{spaceID}"  placeholder="Space ID">
         <button class="btn btn-primary" type="submit" value="Add"style="margin: 33px;padding: 3px 16px;">Submit</button>
     </form>
 </section>

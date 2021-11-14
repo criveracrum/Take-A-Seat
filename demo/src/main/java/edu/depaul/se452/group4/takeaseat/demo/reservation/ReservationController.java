@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.depaul.se452.group4.takeaseat.demo.amenities.AmenitiesRepository;
+import edu.depaul.se452.group4.takeaseat.demo.spaces.SpacesRepository;
 import edu.depaul.se452.group4.takeaseat.demo.workspace.WorkspaceRepository;
 
 @Controller
@@ -24,6 +25,10 @@ public class ReservationController {
 
     @Autowired
     private ReservationService resService;
+
+
+    @Autowired
+    private SpacesRepository spaceRepo;
 
     @Autowired
     private WorkspaceRepository workspaceRepo;
@@ -46,21 +51,24 @@ public class ReservationController {
     @GetMapping("/create")
     public String showAddForm(Model model) {
         model.addAttribute("reservation", new Reservation());
-        model.addAttribute("workspaces", workspaceRepo.findAll());
-        model.addAttribute("amenities", amenityRepo.findAll());
+        model.addAttribute("spaces", spaceRepo.findAll());
+        // model.addAttribute("workspaces", workspaceRepo.findAll());
+        // model.addAttribute("amenities", amenityRepo.findAll());
         return "reservations/create-reservation";
     }
 
     @PostMapping("/create")
     public String add(@Valid Reservation reservation, BindingResult result, Model model){
-        if (result.hasErrors()) {
-            return "reservations/create-reservation";
-          }
+       
         String resNum = String.valueOf((int) Math.floor(Math.random()*(99999-11112+1)+11112));
-        reservation.setReservationNumber(resNum);
-        //DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");  
+        reservation.setReservationNumber(resNum);  
         LocalDateTime now = LocalDateTime.now();  
         reservation.setCreatedDateTime(now);
+        reservation.setSpaceType(reservation.getSpaces().getWorkspaceType());
+        if (result.hasErrors()) {
+            System.out.println(reservation);
+            return "reservations/create-reservation";
+        }
         resService.update(reservation);
         addToNewsFeed(reservation);
         model.addAttribute("reservations", resService.findAll());
@@ -73,6 +81,7 @@ public class ReservationController {
         item.setCreatedDateTime(reservation.getCreatedDateTime());
         item.setReservationNum(reservation.getReservationNumber());
         item.setWorkspaceType(reservation.getSpaceType());
+        item.setWorkspaceName(reservation.getSpaces().getSpaceName());
         newsfeedRepo.save(item);
     }
     
@@ -90,7 +99,7 @@ public class ReservationController {
     @PostMapping("/edit")
     public String update(@Valid Reservation reservation, BindingResult result) {
         if (result.hasErrors()) {
-        return "reservations/create-reservation";
+            return "reservations/create-reservation";
         }
 
         resService.update(reservation);
