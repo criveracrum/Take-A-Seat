@@ -1,8 +1,10 @@
 package edu.depaul.se452.group4.takeaseat.demo.reservation;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -27,7 +29,7 @@ public class Reservation {
     // employee_id INT NOT NULL,
     // workspace_type varchar
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column(name = "reservation_num")
@@ -49,9 +51,8 @@ public class Reservation {
     @Column(name="space_type")
     private String spaceType;
 
-    @ManyToOne
-    @JoinColumn(name = "space_id", nullable=false)    
-    @JsonIgnore
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "space_id", nullable=true)    
     @ToString.Exclude
     private Spaces spaces;
     

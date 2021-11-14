@@ -26,6 +26,7 @@ public class ReservationController {
     @Autowired
     private ReservationService resService;
 
+
     @Autowired
     private SpacesRepository spaceRepo;
 
@@ -74,13 +75,13 @@ public class ReservationController {
         return "redirect:/reservations";
     }
     public void addToNewsFeed(Reservation reservation){
-        // Newsfeed item = new Newsfeed();
-        // item.setReservationDateTime(reservation.getReservationDateTime());
-        // item.setCreatorID(reservation.getCreatorID());
-        // item.setCreatedDateTime(reservation.getCreatedDateTime());
-        // item.setReservationNum(reservation.getReservationNumber());
-        // item.setWorkspaceType(reservation.getSpaceType());
-        // newsfeedRepo.save(item);
+        Newsfeed item = new Newsfeed();
+        item.setReservationDateTime(reservation.getReservationDateTime());
+        item.setCreatorID(reservation.getCreatorID());
+        item.setCreatedDateTime(reservation.getCreatedDateTime());
+        item.setReservationNum(reservation.getReservationNumber());
+        item.setWorkspaceType(reservation.getSpaceType());
+        newsfeedRepo.save(item);
     }
     
     @GetMapping("/delete/{id}")
@@ -97,7 +98,7 @@ public class ReservationController {
     @PostMapping("/edit")
     public String update(@Valid Reservation reservation, BindingResult result) {
         if (result.hasErrors()) {
-        return "reservations/create-reservation";
+            return "reservations/create-reservation";
         }
 
         resService.update(reservation);
