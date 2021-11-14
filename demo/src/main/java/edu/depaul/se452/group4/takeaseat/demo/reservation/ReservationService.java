@@ -15,7 +15,7 @@ public class ReservationService {
     public List<Reservation> findAll() {
         return repository.findAll();
     }
-
+    
     public Reservation update(Reservation reservation) {
         repository.save(reservation);
         return reservation;

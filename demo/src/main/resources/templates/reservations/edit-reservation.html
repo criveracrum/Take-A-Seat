@@ -12,7 +12,7 @@
     <div class="container">
         <p style="font-size: 19px;"></p>
     </div>
-    <form action="#" th:action="@{/reservations/edit}" th:object="${reservation}" method="post">
+    <form action="#" th:action="@{/reservations/edit/}" th:object="${reservation}" method="post">
         <h3 th:text="*{'Reservation #' + reservationNumber}"></h3>
         <input class="form-control" type="datetime-local" th:field="*{reservationDateTime}">
         <button class="btn btn-primary" type="submit" value="Add"style="margin: 33px;padding: 3px 16px;">Submit</button>
@@ -23,7 +23,7 @@
             <input type="text" th:field="*{creatorID}" class="form-control" id="creatorID" placeholder="creatorID" readonly>
             <input type="text" th:field="*{createdDateTime}" class="form-control" id="createdDateTime" placeholder="createdDateTime" readonly>
             <input type="text" th:field="*{spaceType}" class="form-control" id="spaceType" placeholder="spaceType" readonly>
-            <input type="text" th:field="*{spaceID}" class="form-control" id="spaceID" placeholder="spaceID" readonly>
+            <input type="text" th:field="*{spaces.spaceName}" class="form-control" id="spaceID" placeholder="spaceID" readonly>
 
         </div>
     </form>

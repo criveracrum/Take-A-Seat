@@ -13,6 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Newsfeed implements Serializable, Comparable<Newsfeed>{
     
     private String reservationNum;
+    private String workspaceName;
     private String workspaceType;
     private long creatorID;
     private LocalDateTime createdDateTime;
