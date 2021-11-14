@@ -43,5 +43,5 @@ test {
 }
 
 springBoot {
-    mainClassName = 'edu.depaul.se452.group4.takeaseat.demo'
+    mainClassName = 'edu.depaul.se452.group4.takeaseat.demo.DemoApplication'
 }
