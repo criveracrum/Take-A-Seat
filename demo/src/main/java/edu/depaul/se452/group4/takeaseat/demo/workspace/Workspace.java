@@ -29,7 +29,7 @@ public class Workspace {
     private int maxSize;
     
     @Column(name = "workspace_type")
-    private int workspaceType;
+    private String workspaceType;
 
     @OneToOne(cascade = CascadeType.ALL)
     @MapsId
