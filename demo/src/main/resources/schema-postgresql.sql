@@ -27,8 +27,9 @@ CREATE TABLE building (
     building_id serial PRIMARY KEY NOT NULL,
     building_name varchar
 );
-CREATE TABLE prices (
+CREATE TABLE price (
     id serial PRIMARY KEY NOT NULL,
+    workspace_size INT,
     price SMALLINT
 );
 CREATE TABLE amenities(
