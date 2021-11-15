@@ -20,6 +20,46 @@ INSERT INTO workspace(workspacename, max_size) VALUES
     ('High Top', 4 ),
     ('Double Desk', 2 ),
     ('Meeting Room', 6 );
+
+
+INSERT INTO spaces(space_name, workspace_type) VALUES
+    ('Coffee Machine', 'AMENITY'),
+    ('Espresso Machine', 'AMENITY'),
+    ('Microwave', 'AMENITY'),
+    ('Projector', 'AMENITY'),
+    ('Toaster', 'AMENITY'),
+    ('TV', 'AMENITY'),
+    ('Radio', 'AMENITY'),
+    ('Speakers', 'AMENITY'),
+    ('Desk', 'WORKSPACE'),
+    ('Booth', 'WORKSPACE'),
+    ('Cubicle', 'WORKSPACE'),
+    ('Conference Room', 'WORKSPACE'),
+    ('High Top', 'WORKSPACE'),
+    ('Double Desk', 'WORKSPACE'),
+    ('Meeting Room', 'WORKSPACE');
+
+
+INSERT INTO amenities (space_id, amenity_name, workspace_type) VALUES
+    (1, 'Coffee Machine', 'AMENITY'),
+    (2, 'Espresso Machine', 'AMENITY'),
+    (3, 'Microwave', 'AMENITY'),
+    (4, 'Projector', 'AMENITY'),
+    (5, 'Toaster', 'AMENITY'),
+    (6, 'TV', 'AMENITY'),
+    (7, 'Radio', 'AMENITY'),
+    (8, 'Speakers', 'AMENITY');
+
+    
+
+INSERT INTO workspace(space_id, workspacename, max_size, workspace_type) VALUES
+ (9, 'Desk', 1, 'WORKSPACE'),
+ (10, 'Booth', 4, 'WORKSPACE' ),
+ (11, 'Cubicle', 1, 'WORKSPACE' ),
+ (12, 'Conference Room', 20, 'WORKSPACE' ),
+ (13, 'High Top', 4, 'WORKSPACE' ),
+ (14, 'Double Desk', 2, 'WORKSPACE' ),
+ (15, 'Meeting Room', 6 , 'WORKSPACE');
  
 INSERT INTO employee(fullname, birthdate) VALUES
     ('Tom Select', '1981-06-01'),
