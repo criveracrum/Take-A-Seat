@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <head th:replace="/fragments/header :: common-header">  
+
+</head>
+
+<body>
+    <div th:replace="/fragments/header :: header"></div>  
+    <main class="page lanidng-page">
+        <h2 class="text-center" style="width: 900;padding: 37px;">Manage Employees</h2>
+        <section class="portfolio-block block-intro" style="width: 900;">
+            <div class="container">
+            <div class="d-flex justify-content-center row">
+                <div class="col-sm-7">
+                        <div class="table-responsive">
+                            <table class="table caption-top">
+                                <caption>Edit Employee Name, Birthdate, or Team</caption>
+                                <thead>
+                                    <tr>
+                                    
+                                        <th scope="col">Employee ID </th>
+                                        <th scope="col">Employee Name </th> 
+                                        <th scope="col">Employee DOB</th> <th scope="col">Employee team</th>
+                                        <th scope="col"></th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody class="table-body">
+                                    <tr th:if="${employees.empty}">
+                                        <td colspan="2"> No active employees </td>
+                                    </tr>
+                                    <tr scope="row" th:each="employee : ${employees}">
+                                        <td th:text="${employee.employeeId}"></td>
+                                        <td th:text="${employee.name}"></td>
+                                        <td th:text="${employee.birthdate}"></td>
+                                        <td th:text="${employee.team}"></td>
+                                        <td><a th:href="@{/employees/edit/{id}(id=${employee.id})}" class="btn btn-info">Edit</a></td>
+                                        <td><a th:href="@{/employees/delete/{id}(id=${employee.id})}" class="btn btn-danger">Delete</a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <br>
+                            <a class="btn btn-info" href="/employees/add">
+                                Add Employee
+                            </a>
+                    </div>
+                    <a class="nav-link" href="/team"><input type="button" class="btn" value="View Teams"></a>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>
