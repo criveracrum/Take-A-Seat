@@ -46,7 +46,7 @@
                                       <td th:text="${workspace.workspacename}"></td>
                                       <td th:text="${workspace.maxSize}"></td>
                                       <td><a th:href="@{#}" class="btn btn-info">Edit</a></td>
-                                    <td><a th:href="@{#}" class="btn btn-danger">Delete</a></td>
+                                      <td><a th:href="@{/spaces/delete-workspace/{id}(id=${workspace.id})}" class="btn btn-danger">Delete</a></td>
                                   </tr>
                               </tbody>
                           </table>
