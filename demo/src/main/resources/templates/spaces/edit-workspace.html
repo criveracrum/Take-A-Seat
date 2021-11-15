@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <head th:replace="/fragments/header :: common-header">  
+
+</head>
+
+<section class="portfolio-block block-intro" style="width: 900;">
+    <div th:replace="/fragments/header :: header"></div> 
+    <h2 class="text-center" style="width: 900;padding: 37px;">Workspaces</h2>
+    <div class="container">
+        <p style="font-size: 19px;"></p>
+    </div>
+    <form action="#" th:action="@{/main-list/edit/}" th:object="${workspace}" method="post">
+        <h3 th:text="*{'Reservation #' + reservationNumber}"></h3>
+        <input class="form-control" type="datetime-local" th:field="*{reservationDateTime}">
+        <button class="btn btn-primary" type="submit" value="Add"style="margin: 33px;padding: 3px 16px;">Submit</button>
+        <div class="form-group col-md-6" hidden>
+            <label for="id" class="col-form-label">id</label>
+            <input type="text" th:field="*{id}" class="form-control" id="id" placeholder="Id" readonly>
+            <input type="text" th:field="*{reservationNumber}" class="form-control" id="reservationNumber" placeholder="Reservation#" readonly>
+            <input type="text" th:field="*{creatorID}" class="form-control" id="creatorID" placeholder="creatorID" readonly>
+        </div>
+    </form>
+</section>

@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.depaul.se452.group4.takeaseat.demo.amenities.Amenities;
@@ -17,6 +18,10 @@ import edu.depaul.se452.group4.takeaseat.demo.workspace.WorkspaceRepository;
 @RequestMapping("spaces")
 public class SpacesController {
 
+
+
+    @Autowired
+    private SpacesService spaService;
     
     @Autowired
     private SpacesRepository spacesRepository;
@@ -44,4 +49,17 @@ public class SpacesController {
         model.addAttribute("amenities", amenitiesRepository.findAll());
         return "spaces/amenity-list";
     }
+
+    @GetMapping("/delete-workspace/{id}")
+    public String delete(@PathVariable("id") String id, Model model) {
+        spaService.deleteWorkspaceById(id);
+        return "redirect:/spaces";
+    } 
+
+    @GetMapping("/delete-amenity/{id}")
+    public String deleteAmenity(@PathVariable("id") String id, Model model) {
+        spaService.deleteAmenityById(id);
+        return "redirect:/spaces";
+    } 
+
 }
