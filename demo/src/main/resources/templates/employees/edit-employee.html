@@ -21,15 +21,12 @@
         <input class="form-control" type="date" th:field="*{birthdate}">
 
         <select class="form-select" th:field="*{team}">
-        
-            <option th:each="i : ${team}" th:value="${i.id}" th:text="${i.teamname}" >
-
+            <option th:each="i : ${team}" th:value="${i.id}" th:text="${i.name}" >
             </option>
         </select>
         
         <div class="form-group col-md-6" hidden>
             <input type="number" th:field="*{employeeId}" class="form-control" id="employeeId" placeholder="employeeId" readonly>
-            <input type="number" th:field="*{team}" class="form-control" id="team_id" placeholder="team_id" readonly>
             <input type="text" th:field="*{id}" class="form-control" id="id" placeholder="Id" readonly>
         </div>
 

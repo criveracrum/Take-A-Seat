@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import edu.depaul.se452.group4.takeaseat.demo.team.TeamRepository;
 
 @Controller
 @RequestMapping("employees")
@@ -20,6 +21,9 @@ public class EmployeeController {
 
     @Autowired
     private EmployeeService employeeService;
+
+    @Autowired
+    TeamRepository teamRepository;
 
     @GetMapping
     public String login(Model model) {
@@ -36,7 +40,9 @@ public class EmployeeController {
     }
 
     @GetMapping("/add")
-    public String showSignUpForm(Employee employee) {
+    public String showSignUpForm(Model model) {
+        model.addAttribute("employee", new Employee());
+        model.addAttribute("team", teamRepository.findAll());
         return "employees/add-employee";
     }
 
@@ -55,6 +61,7 @@ public class EmployeeController {
     public String showEdit(@PathVariable("id") String employeeId, Model model) {
         Employee employee = employeeService.findById(employeeId);
         model.addAttribute("employee", employee);
+        model.addAttribute("team", teamRepository.findAll());
         return "employees/edit-employee";
     }
 

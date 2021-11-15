@@ -74,3 +74,5 @@ INSERT INTO reservations(
     )
 VALUES ('11111', '2021-10-19 12:00:00', 1, 'AMENITY', 1),
     ('22222', '2021-10-31 13:30:00', 1, 'AMENITY', 2);
+-- update spaces set reservation_list=(select reservation_num from reservations WHERE reservation_num='11111') WHERE space_id=1;
+-- update spaces set reservation_list=(select reservation_num from reservations WHERE reservation_num='22222') WHERE space_id=2;

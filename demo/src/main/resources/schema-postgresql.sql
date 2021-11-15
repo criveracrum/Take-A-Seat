@@ -11,6 +11,7 @@ CREATE SEQUENCE hibernate_sequence START WITH 1 INCREMENT BY 1;
 CREATE TABLE reservations (
     id serial PRIMARY KEY NOT NULL,
     reservation_num varchar(10),
+    date_created timestamp default current_timestamp,
     res_date timestamp,
     creator_id INT NOT NULL,
     space_type varchar,
