@@ -28,7 +28,7 @@ public class Workspace {
 
     @Column(name = "max_size")
     private int maxSize;
-    
+
     @Column(name = "workspace_type")
     private String workspaceType;
 
