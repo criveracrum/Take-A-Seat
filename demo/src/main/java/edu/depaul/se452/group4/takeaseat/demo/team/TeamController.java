@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+import edu.depaul.se452.group4.takeaseat.demo.employee.EmployeeRepository;
 
 @Controller
 @RequestMapping("team")
@@ -19,10 +20,14 @@ public class TeamController {
   @Autowired
   private TeamService teamService;
 
+  @Autowired
+  private EmployeeRepository employeeRepository;
+
   @GetMapping
   public ModelAndView showTeams() {
     ModelAndView mv = new ModelAndView("team/list-teams");
     mv.addObject("team", teamService.findAll());
+    mv.addObject("employees", employeeRepository.findAll());
     return mv;
   }
 

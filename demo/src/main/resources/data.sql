@@ -36,13 +36,35 @@ VALUES (9, 'Desk', 1, 'WORKSPACE'),
     (13, 'High Top', 4, 'WORKSPACE'),
     (14, 'Double Desk', 2, 'WORKSPACE'),
     (15, 'Meeting Room', 6, 'WORKSPACE');
-INSERT INTO employees(emp_id, fullname, birthdate)
-VALUES ('2', 'Tom Select', '1981-06-01'),
-    ('4', 'Johnny Appleseed', '1972-07-30');
-INSERT INTO team(id, teamname, employeecount)
-VALUES ('404', 'Team not Found', '5'),
-    ('007', 'The Bonds', '2'),
-    ('452', 'Enterprise Computers', '15');
+INSERT INTO employees(emp_id, fullname, birthdate, team_id)
+VALUES (
+        '2',
+        'Tom Select',
+        '1981-06-01',
+        '404'
+    ),
+    (
+        '3',
+        'Peter Parker',
+        '1989-08-08',
+        '404'
+    ),
+    (
+        '14',
+        'Jimmy John',
+        '1990-09-09',
+        '404'
+    ),
+    (
+        '4',
+        'Johnny Appleseed',
+        '1972-07-30',
+        '007'
+    ),
+    ('12', 'James Bond', '1958-05-09', '007');
+INSERT INTO team(teamname, team_id)
+VALUES ('Team not Found', '404'),
+    ('The Bonds', '007');
 INSERT INTO reservations(
         reservation_num,
         res_date,

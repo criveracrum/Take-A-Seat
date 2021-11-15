@@ -15,10 +15,15 @@
                 <p style="font-size: 19px;"></p>
             </div>
             <form action="#" th:action="@{/employees}" th:object="${employee}" method="post">
-                <input type="text" th:field="*{employeeId}" class="form-control" id="employeeId" placeholder="Employee ID">
+                <input type="number" th:field="*{employeeId}" class="form-control" id="employeeId" placeholder="Employee ID">
                             <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="First and Last Name">
                             <input type="date" th:field="*{birthdate}" class="form-control" id="birthdate" placeholder="Date of Birth">
-
+                            <select class="form-select" th:field="*{team}">
+        
+                                <option th:each="i : ${team}" th:value="${i.id}" th:text="${i.teamname}" >
+                    
+                                </option>
+                            </select>
                 <button class="btn btn-primary" type="submit" value="Add" style="margin: 20px;padding: 3px 16px;">Submit</button><br>
               
               </form>

@@ -22,7 +22,6 @@
                                     <tr>
                                         <th scope="col">Team ID </th>
                                         <th scope="col">Team Name </th> 
-                                        <th scope="col">Employee Count</th>
                                         <th scope="col"></th>
                                         <th scope="col"></th>
                                     </tr>
@@ -34,9 +33,7 @@
                                     <tr scope="row" th:each="team : ${team}">
                                         <td th:text="${team.id}"></td>
                                         <td th:text="${team.name}"></td>
-                                        <td th:text="${team.count}"></td>
                                         <td><a th:href="@{/team/edit/{id}(id=${team.id})}" class="btn btn-info">Edit</a></td>
-                                        <td><a th:href="@{/team/delete/{id}(id=${team.id})}" class="btn btn-danger">Delete</a></td>
                                     </tr>
                                 </tbody>
                             </table>

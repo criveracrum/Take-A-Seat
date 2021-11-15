@@ -16,10 +16,7 @@
         <h3 th:text="*{'team #' + id}"></h3>
         <!-- <label for="name" class="col-form-label">Edit Employee Name</label> -->
         <input class="form-control" type="text" th:field="*{name}">
-
-        <!-- <label for="date" class="col-form-label">Edit Employee Birthdate</label> -->
-        <input class="form-control" type="number" th:field="*{count}">
-        
+     
         <div class="form-group col-md-6" hidden>
 
             <input type="text" th:field="*{id}" class="form-control" id="id" placeholder="Id" readonly>
