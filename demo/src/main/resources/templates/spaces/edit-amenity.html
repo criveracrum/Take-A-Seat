@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <head th:replace="/fragments/header :: common-header">  
+
+</head>
+
+<section class="portfolio-block block-intro" style="width: 900;">
+    <div th:replace="/fragments/header :: header"></div> 
+    <h2 class="text-center" style="width: 900;padding: 37px;">Editing Spaces</h2>
+    <div class="container">
+        <p style="font-size: 19px;"></p>
+    </div>
+    <form action="#" th:action="@{/spaces/edit-amenity/}" th:object="${amenities}" method="post">
+            <h3 th:text="*{'Amenity #' + id}"></h3>
+            <label for="amenityName" class="col-form-label">Name</label>
+            <input class="form-control" type="text" th:field="*{amenityName}">
+        <button class="btn btn-primary" type="submit" value="Add"style="margin: 33px;padding: 3px 16px;">Submit</button>
+             <div class="form-group col-md-6" hidden>
+            <input type="text" th:field="*{id}" class="form-control" id="id" placeholder="Id" readonly>
+        </div>
+    </form>
+</section>
