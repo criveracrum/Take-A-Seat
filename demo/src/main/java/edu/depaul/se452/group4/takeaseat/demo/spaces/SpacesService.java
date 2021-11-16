@@ -26,10 +26,33 @@ import edu.depaul.se452.group4.takeaseat.demo.workspace.WorkspaceRepository;
         private AmenitiesRepository amenitiesRepository;
 
     
-        public List<Spaces> findAll() {
-            return spacesRepository.findAll();
+        public List<Spaces> findAllSpaces(String keyword) {
+
+            if(keyword != null)
+            {
+                return spacesRepository.findAll(keyword);
+            }
+            return (List<Spaces>) spacesRepository.findAll();
         }
-        
+
+        public List<Workspace> findAllWorkspaces(String keyword) {
+
+            if(keyword != null)
+            {
+                return workspaceRepository.findAll(keyword);
+            }
+            return  workspaceRepository.findAll();
+        }
+
+        public List<Amenities> findAllAmenities(String keyword) {
+
+            if(keyword != null)
+            {
+                return amenitiesRepository.findAll(keyword);
+            }
+            return  amenitiesRepository.findAll();
+        }
+
         public Workspace updateWorkspace(Workspace workspace) {
             workspaceRepository.save(workspace);
             return workspace;

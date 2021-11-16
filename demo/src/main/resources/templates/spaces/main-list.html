@@ -7,13 +7,20 @@
 
 <div th:replace="/fragments/header :: header"></div>  
 <h1> Spaces </h1>
-          
+      
+
+
 <body>
   
-
-  <div class="search">
-    <input type="text"  placeholder="Filter Spaces..."> 
-  </div> 
+    <div class="search">
+        <form th:action = "@{spaces}">
+            Filter:
+            <input type = "text" name="keyword" />
+            &nbsp;
+            <input type="submit" value="Search"/>
+        </form>
+      </div> 
+  
   
  
   <main class="page lanidng-page">
