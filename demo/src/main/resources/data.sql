@@ -57,6 +57,6 @@ INSERT INTO price(workspace_size, price) VALUES
     (20, 150);
 
 INSERT INTO building(buildingName, desks, booth, cubicle, hightop, conferenceRoom, doubleDesk, meetingRoom) VALUES
-    ("25 E Jackson", 5, 2, 1, 1, 2, 8, 1),
-    ("243 S Wabash", 2, 6, 10, 4, 1, 8, 4),
-    ("14 E Jackson", 1, 5, 3, 7, 2, 8, 1);
+    ('25 E Jackson', 5, 2, 1, 1, 2, 8, 1),
+    ('243 S Wabash', 2, 6, 10, 4, 1, 8, 4),
+    ('14 E Jackson', 1, 5, 3, 7, 2, 8, 1);
