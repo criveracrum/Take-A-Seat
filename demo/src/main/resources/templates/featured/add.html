@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <head th:replace="/fragments/header :: common-header">  
+
+</head>
+<div th:replace="/fragments/header :: header"></div> 
+<section class="portfolio-block block-intro" style="width: 900;">
+    
+    <h2 class="text-center" style="width: 900;padding: 37px;">Featured</h2>
+    <div class="container">
+        <p style="font-size: 19px;"></p>
+    </div>
+    <form action="#" th:action="@{/featured/add}" th:object="${featured}" method="post">
+        <select class="form-select" th:field="*{id}">
+        
+            <option th:each="i : ${workspaces}" th:value="${i.id}" th:text="${i.workspacename}" >
+
+            </option>
+        </select>
+        <button class="btn btn-primary" type="submit" value="Add"style="margin: 33px;padding: 3px 16px;">Add</button>
+    </form>
+</section>
