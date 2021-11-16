@@ -13,7 +13,10 @@
         <p style="font-size: 19px;"></p>
     </div>
     <form action="#" th:action="@{/reservations/create}" th:object="${reservation}" method="post">
-        <input class="form-control" type="text" th:field="*{creatorID}"  placeholder="Creator ID" >
+        <select class="form-select" th:field="*{creatorID}">
+            <option th:each="employee : ${employees}" th:value="${employee.employeeId}" th:text="${employee.name}" >
+            </option>
+        </select>
         <input class="form-control" type="datetime-local" th:field="*{reservationDateTime}">
         <select class="form-select" th:field="*{spaces}">
         

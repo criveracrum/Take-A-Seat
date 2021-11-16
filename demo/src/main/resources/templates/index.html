@@ -60,7 +60,7 @@
                     <tr scope="row" th:each="feature : ${featured}">
                         <td th:text="${feature.workspaceName}"></td>
                         <td th:text="${feature.size}"></td>
-                        <td><a th:href="@{#}" class="btn btn-info">Book</a></td>
+                        <td><a th:href="@{/reservations/create}" class="btn btn-info">Book</a></td>
                     </tr>
                 </tbody>
             </table>
