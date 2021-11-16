@@ -5,44 +5,42 @@
     <head th:replace="/fragments/header :: common-header">  
 
 </head>
-
+<div th:replace="/fragments/header :: header"></div>  
 <body>
-    <div th:replace="/fragments/header :: header"></div>  
+    
     <main class="page lanidng-page">
-        <h2 class="text-center" style="width: 900;padding: 37px;">Manage Teams</h2>
+        <h2 class="text-center" style="width: 900;padding: 37px;">Team Reviews</h2>
         <section class="portfolio-block block-intro" style="width: 900;">
             <div class="container">
             <div class="d-flex justify-content-center row">
-                <div th:switch="${teamreviews}" class="container"></div>
+                <div th:switch="${reviews}" class="container"></div>
                     <div class="col-sm-7">
                         <div class="table-responsive">
                             <table class="table caption-top">
-                                <caption>Manage Teams</caption>
                                 <thead>
                                     <tr>
                                         <th scope="col">Team ID </th>
-                                        <th scope="col">Team Name </th> 
-                                        <th scope="col">Employee Count</th>
+                                        <th scope="col">Review </th> 
+                                        <th scope="col">Reviewer</th>
                                         <th scope="col"></th>
                                         <th scope="col"></th>
                                     </tr>
                                 </thead>
                                 <tbody class="table-body">
-                                    <tr th:if="${teamreviews.empty}">
+                                    <tr th:if="${teams.empty}">
                                         <td colspan="2"> No active Teams </td>
                                     </tr>
-                                    <tr scope="row" th:each="review : ${teamreviews}">
-                                        <td th:text="${review.id}"></td>
-                                        <td th:text="${review.name}"></td>
-                                        <td th:text="${review.count}"></td>
-                                        <td><a th:href="@{/team/edit/{id}(id=${team.id})}" class="btn btn-info">Edit</a></td>
-                                        <td><a th:href="@{/team/delete/{id}(id=${team.id})}" class="btn btn-danger">Delete</a></td>
+                                    <tr scope="row" th:each="review : ${reviews}">
+                                        <td th:text="${review.team}"></td>
+                                        <td th:text="${review.review}"></td>
+                                        <td th:text="${review.reviewer}"></td>
+                                        <td><a th:href="@{/teamreviews/delete/{team}(team=${review.team})}" class="btn btn-info">Delete</a></td>
                                     </tr>
                                 </tbody>
                             </table>
                             <br>
-                            <a class="btn btn-info" href="/team/add">
-                                Create a team
+                            <a class="btn btn-info" th:href="@{/teamreviews/add}">
+                                Add a team review
                             </a>
                     </div>
                 </div>
