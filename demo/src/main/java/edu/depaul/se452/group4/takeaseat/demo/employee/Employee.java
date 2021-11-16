@@ -2,8 +2,6 @@ package edu.depaul.se452.group4.takeaseat.demo.employee;
 
 import java.sql.Date;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.*;
 
@@ -32,7 +30,7 @@ public class Employee {
   @Column(name = "birthdate")
   public Date birthdate;
 
-  @ManyToOne(cascade = CascadeType.ALL)
+  @ManyToOne(cascade = CascadeType.PERSIST)
   @JoinColumn(name = "team_id", nullable = true)
   @ToString.Exclude
   public Team team;

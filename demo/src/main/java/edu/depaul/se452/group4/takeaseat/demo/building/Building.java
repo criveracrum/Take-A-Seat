@@ -16,8 +16,28 @@ public class Building {
     @Id
     @GeneratedValue
     private long id;
-    
      
-    @Column(name="building_name")
-    private String building_name;
+    @Column(name="buildingName")
+    private String buildingName;
+
+    @Column(name="desks")
+    private int numberOfDesks;
+
+    @Column(name="booth")
+    private int numberOfBooths;
+
+    @Column(name="cubicle")
+    private int numberOfCubicles;
+
+    @Column(name="hightop")
+    private int numberOfHighTops;
+
+    @Column(name="conferenceRoom")
+    private int numberOfConferenceRooms;
+
+    @Column(name="doubleDesk")
+    private int numberOfDoubleDesks;
+
+    @Column(name="meetingRoom")
+    private int numberOfMeetingRooms;
 }

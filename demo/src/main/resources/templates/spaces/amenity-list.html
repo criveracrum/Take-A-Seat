@@ -43,8 +43,8 @@
                                 <tr scope="row" th:each="amenity : ${amenities}">
                                     <td th:text="${amenity.id}"></td>
                                     <td th:text="${amenity.amenityName}"></td>
-                                    <td><a th:href="@{#}" class="btn btn-info">Edit</a></td>
-                                    <td><a th:href="@{#}" class="btn btn-danger">Delete</a></td>
+                                    <td><a th:href="@{/spaces/edit-amenity/{id}(id=${amenity.id})}" class="btn btn-info">Edit</a></td>
+                                    <td><a th:href="@{/spaces/delete-amenity/{id}(id=${amenity.id})}" class="btn btn-danger">Delete</a></td>
                                 </tr>
                             </tbody>
                         </table>
