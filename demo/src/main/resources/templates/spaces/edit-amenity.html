@@ -12,12 +12,10 @@
     <div class="container">
         <p style="font-size: 19px;"></p>
     </div>
-    <form action="#" th:action="@{/spaces/edit-workspace/}" th:object="${workspaces}" method="post">
-            <h3 th:text="*{'Workspace #' + id}"></h3>
-            <label for="workspacename" class="col-form-label">Name</label>
-            <input class="form-control" type="text" th:field="*{workspacename}">
-            <label for="maxSize" class="col-form-label">Size</label>
-            <input class="form-control"  type="text" th:field="*{maxSize}">
+    <form action="#" th:action="@{/spaces/edit-amenity/}" th:object="${amenities}" method="post">
+            <h3 th:text="*{'Amenity #' + id}"></h3>
+            <label for="amenityName" class="col-form-label">Name</label>
+            <input class="form-control" type="text" th:field="*{amenityName}">
         <button class="btn btn-primary" type="submit" value="Add"style="margin: 33px;padding: 3px 16px;">Submit</button>
              <div class="form-group col-md-6" hidden>
             <input type="text" th:field="*{id}" class="form-control" id="id" placeholder="Id" readonly>
