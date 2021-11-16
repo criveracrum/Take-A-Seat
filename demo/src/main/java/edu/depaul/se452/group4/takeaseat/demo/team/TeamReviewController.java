@@ -52,9 +52,9 @@ public class TeamReviewController {
       return "redirect:/teamreviews";
   
     }
-    @GetMapping("/delete/{team}")
-    public String delete(@PathVariable("team") String team, Model model) {
-        teamReviewRepo.deleteById(team);  
+    @GetMapping("/delete/{reviewer}")
+    public String delete(@PathVariable("reviewer") String id, Model model) {
+        teamReviewRepo.deleteById(id);  
         return "redirect:/teamreviews";
     } 
 }

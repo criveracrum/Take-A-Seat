@@ -34,7 +34,7 @@
                                         <td th:text="${review.team}"></td>
                                         <td th:text="${review.review}"></td>
                                         <td th:text="${review.reviewer}"></td>
-                                        <td><a th:href="@{/teamreviews/delete/{team}(team=${review.team})}" class="btn btn-info">Delete</a></td>
+                                        <td><a th:href="@{/teamreviews/delete/{id}(id=${review.reviewer})}" class="btn btn-info">Delete</a></td>
                                     </tr>
                                 </tbody>
                             </table>
