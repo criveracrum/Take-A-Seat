@@ -18,7 +18,7 @@ public class Price {
     private long id;
     
     @Column(name="workspace_size")
-    private int "workspace_size";
+    private int workspace_size;
 
 
     @Column(name="price")

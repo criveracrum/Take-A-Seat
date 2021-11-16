@@ -6,6 +6,8 @@ DROP TABLE IF EXISTS amenities;
 DROP TABLE IF EXISTS workspace;
 DROP TABLE IF EXISTS employees;
 DROP TABLE IF EXISTS team;
+DROP TABLE IF EXISTS price;
+
 DROP SEQUENCE IF EXISTS hibernate_sequence;
 CREATE SEQUENCE hibernate_sequence START WITH 1 INCREMENT BY 1;
 CREATE TABLE reservations (
@@ -19,7 +21,14 @@ CREATE TABLE reservations (
 );
 CREATE TABLE building (
     building_id serial PRIMARY KEY NOT NULL,
-    building_name varchar
+    buildingName varchar(30),
+    desks int,
+    booth int, 
+    cubicle int, 
+    hightop int, 
+    conferenceRoom int,
+    doubleDesk int,
+    meetingRoom int
 );
 CREATE TABLE price (
     id serial PRIMARY KEY NOT NULL,
