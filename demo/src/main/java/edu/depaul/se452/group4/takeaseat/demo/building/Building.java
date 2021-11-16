@@ -16,7 +16,6 @@ public class Building {
     @Id
     @GeneratedValue
     private long id;
-    
      
     @Column(name="buildingName")
     private String buildingName;

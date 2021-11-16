@@ -19,6 +19,7 @@ CREATE TABLE reservations (
     space_type varchar,
     space_id INT
 );
+
 CREATE TABLE building (
     building_id serial PRIMARY KEY NOT NULL,
     buildingName varchar(30),
@@ -30,6 +31,7 @@ CREATE TABLE building (
     doubleDesk int,
     meetingRoom int
 );
+
 CREATE TABLE price (
     id serial PRIMARY KEY NOT NULL,
     workspace_size INT,
