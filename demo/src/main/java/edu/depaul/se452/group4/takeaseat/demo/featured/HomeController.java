@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import edu.depaul.se452.group4.takeaseat.demo.reservation.NewsfeedRepository;
 
 @Controller
-@RequestMapping("/index")
+@RequestMapping("/")
 public class HomeController {
 
 
@@ -20,7 +20,7 @@ public class HomeController {
     public String showAllWorkspaces(Model model) {
         model.addAttribute("featured", featuredRepository.findAll());
         
-        return "index";
+        return "/index";
     }
     
 }

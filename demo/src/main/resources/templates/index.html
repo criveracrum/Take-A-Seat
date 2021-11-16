@@ -37,89 +37,33 @@
             <div class="container">
                 <div class="about-me"></div>
             </div>
-            <p>TEST Book a workspace for your next trip to the office.</p>
+            <p>Book a workspace for your next trip to the office.</p>
         </section>
         <section class="portfolio-block photography"></section>
     </main>
     <main class="page lanidng-page">
         <h1>Featured Spaces </h1>
-        <div class="container mydiv">
-            <div class="row">
-                <div class="col-md-4">
-                    <!-- bbb_deals -->
-                    <div class="bbb_deals">
-                        <div class="ribbon ribbon-top-right"><span><small class="cross"> </small>4.6</span></div>
-                        <div class="bbb_deals_title">Available Today</div>
-                        <div class="bbb_deals_slider_container">
-                            <div class=" bbb_deals_item">
-                                <div class="bbb_deals_image"><img src="assets/img/meetingroom.jpg" alt=""></div>
-                                <div class="bbb_deals_content">
-                                    <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
-                                        <div class="bbb_deals_item_category"><a href="#">Workspace</a></div>
-                                    </div>
-                                    <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
-                                        <div class="bbb_deals_item_name">Meeting Room</div>
-                                    </div>
-                                    <div class="available">
-                                        <div class="available_line d-flex flex-row justify-content-start">
-                                            <div class="available_title">Fits: <span>6</span></div>
-                                            <div class="sold_stars ml-auto"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-                                        </div>
-                                        <div class="available_bar"><span style="width:17%"></span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <!-- bbb_deals -->
-                    <div class="bbb_deals">
-                        <div class="ribbon ribbon-top-right"><span><small class="cross"> </small>5.0</span></div>
-                        <div class="bbb_deals_title">Available Now</div>
-                        <div class="bbb_deals_slider_container">
-                            <div class=" bbb_deals_item">
-                                <div class="bbb_deals_image"><img src="assets/img/espressomachine.jpg" alt=""></div>
-                                <div class="bbb_deals_content">
-                                    <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
-                                        <div class="bbb_deals_item_category"><a href="#">Amenity</a></div>
-                                    </div>
-                                    <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
-                                        <div class="bbb_deals_item_name">Espresso Machine</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <!-- bbb_deals -->
-                    <div class="bbb_deals">
-                        <div class="ribbon ribbon-top-right"><span><small class="cross"> </small>4.2</span></div>
-                        <div class="bbb_deals_title">Available Tomorrow</div>
-                        <div class="bbb_deals_slider_container">
-                            <div class=" bbb_deals_item">
-                                <div class="bbb_deals_image"><img src="assets/img/workcube.jpg" alt=""></div>
-                                <div class="bbb_deals_content">
-                                    <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
-                                        <div class="bbb_deals_item_category"><a href="#">Workspace</a></div>
-                                    </div>
-                                    <div class="bbb_deals_info_line d-flex flex-row justify-content-start">
-                                        <div class="bbb_deals_item_name">Single work cube</div>
-                                    </div>
-                                    <div class="available">
-                                        <div class="available_line d-flex flex-row justify-content-start">
-                                            <div class="available_title">Fits: <span>1</span></div>
-                                            <div class="sold_stars ml-auto"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> </div>
-                                        </div>
-                                        <div class="available_bar"><span style="width:17%"></span></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+        <div class="table-responsive table-borderless">
+            <table class="table">
+                <thead>
+                    <tr>
+                    
+                        <th scope="col">Workspace Name</th>
+                        <th scope="col">Max Size</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <!-- <tr th:if="${featured}">
+                        <td colspan="2"> No Featured Spaces... </td>
+                    </tr> -->
+                    <tr scope="row" th:each="feature : ${featured}">
+                        <td th:text="${feature.workspaceName}"></td>
+                        <td th:text="${feature.size}"></td>
+                        <td><a th:href="@{#}" class="btn btn-info">Book</a></td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </main>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
