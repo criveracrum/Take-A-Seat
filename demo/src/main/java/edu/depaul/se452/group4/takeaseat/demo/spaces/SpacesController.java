@@ -50,7 +50,7 @@ public class SpacesController {
         return "spaces/main-list";
     }
 
-    @RequestMapping("/workspace-list")
+    @GetMapping("/workspace-list")
     public String showWorkspaces(Model model) {
         model.addAttribute("workspaces", workspaceRepository.findAll());
         return "spaces/workspace-list";
