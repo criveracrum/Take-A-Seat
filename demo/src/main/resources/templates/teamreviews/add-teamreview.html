@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <head th:replace="/fragments/header :: common-header">  
+
+</head>
+
+<body>
+    <div th:replace="/fragments/header :: header"></div>  
+    <main class="page lanidng-page">
+        <h2 class="text-center" style="width: 900;padding: 37px;">Add Team Review</h2>
+        <section class="portfolio-block block-intro" style="width: 900;">
+            <div class="container">
+            <div class="d-flex justify-content-center row">
+                <form action="#" th:action="@{/teamreviews/add}" th:object="${teamreview}" method="post">
+                    <select class="form-select" th:field="*{team}">
+                        <option th:each="team : ${teams}" th:value="${team.name}" th:text="${team.name}" >
+                        </option>
+                    </select>
+                    <input class="form-control" type="text" th:field="*{review}" placeholder="Review text">
+                    <input class="form-control" type="text" th:field="*{reviewer}" placeholder="Reviewer name (ie. Anonymous)">
+                    <button class="btn btn-primary" type="submit" value="Add"style="margin: 33px;padding: 3px 16px;">Submit</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>

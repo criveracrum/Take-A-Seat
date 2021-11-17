@@ -5,45 +5,45 @@
     <head th:replace="/fragments/header :: common-header">  
 
 </head>
-
+<div th:replace="/fragments/header :: header"></div>  
 <body>
-    <div th:replace="/fragments/header :: header"></div>  
+    
     <main class="page lanidng-page">
-        <h2 class="text-center" style="width: 900;padding: 37px;">Manage Teams</h2>
+        <h2 class="text-center" style="width: 900;padding: 37px;">Space Reviews</h2>
         <section class="portfolio-block block-intro" style="width: 900;">
             <div class="container">
             <div class="d-flex justify-content-center row">
-                <div th:switch="${team}" class="container"></div>
+                <div th:switch="${reviews}" class="container"></div>
                     <div class="col-sm-7">
                         <div class="table-responsive">
                             <table class="table caption-top">
-                                <caption>Manage Teams</caption>
                                 <thead>
                                     <tr>
-                                        <th scope="col">Team ID </th>
-                                        <th scope="col">Team Name </th> 
-                                        <th scope="col"></th>
+                                        <th scope="col">Space Name </th>
+                                        <th scope="col">Review </th> 
+                                        <th scope="col">Rating</th>
+                                        <th scope="col">Reviewer</th>
                                         <th scope="col"></th>
                                     </tr>
                                 </thead>
                                 <tbody class="table-body">
-                                    <tr th:if="${team.empty}">
-                                        <td colspan="2"> No active Teams </td>
+                                    <tr th:if="${reviews.empty}">
+                                        <td colspan="2"> No reviews... </td>
                                     </tr>
-                                    <tr scope="row" th:each="team : ${team}">
-                                        <td th:text="${team.id}"></td>
-                                        <td th:text="${team.name}"></td>
-                                        <td><a th:href="@{/team/edit/{id}(id=${team.id})}" class="btn btn-info">Edit</a></td>
+                                    <tr scope="row" th:each="review : ${reviews}">
+                                        <td th:text="${review.spaceName}"></td>
+                                        <td th:text="${review.reviewText}"></td>
+                                        <td th:text="${review.rating}"></td>
+                                        <td th:text="${review.reviewer}"></td>
+
                                     </tr>
                                 </tbody>
                             </table>
                             <br>
-                            <a class="btn btn-info" href="/team/add">
-                                Create a team
+                            <a class="btn btn-info" th:href="@{/reviews/add}">
+                                Add a Space Review
                             </a>
                     </div>
-                    <a class="nav-link" href="/employees/list"><input type="button" class="btn" value="View Employees"></a>
-                    <a class="nav-link" th:href="@{/teamreviews}"><input type="button" class="btn" value="View Reviews"></a>
                 </div>
             </div>
         </div>
