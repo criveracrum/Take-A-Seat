@@ -16,7 +16,6 @@ import javax.persistence.ManyToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.Size;
 
 import edu.depaul.se452.group4.takeaseat.demo.employee.Employee;
 import lombok.Data;
@@ -32,9 +31,7 @@ public class User {
     @NotEmpty
     @Column(nullable = false, unique = true)
     private String username;
-    
     @NotEmpty
-    @Size(min = 2, max = 30)
     private String password;
 
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
