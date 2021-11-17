@@ -1,10 +1,13 @@
 package edu.depaul.se452.group4.takeaseat.demo.employee;
 
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,6 +16,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
+
+import edu.depaul.se452.group4.takeaseat.demo.security.Authority;
+import edu.depaul.se452.group4.takeaseat.demo.security.AuthorityRepository;
+import edu.depaul.se452.group4.takeaseat.demo.security.AuthorityType;
+import edu.depaul.se452.group4.takeaseat.demo.security.User;
+import edu.depaul.se452.group4.takeaseat.demo.security.UserRepository;
 import edu.depaul.se452.group4.takeaseat.demo.team.TeamRepository;
 
 @Controller
@@ -78,6 +87,40 @@ public class EmployeeController {
     @GetMapping("/delete/{id}")
     public String delete(@PathVariable("id") String employeeId, Model model) {
         employeeService.deleteById(employeeId);
+        return "redirect:/employees/list";
+    }
+
+    @Autowired
+    private UserRepository userRepo;
+
+    @Autowired
+    private AuthorityRepository adminRepo;
+
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+    
+    @GetMapping("/add-user")
+    public ModelAndView addUser() {
+        ModelAndView mv = new ModelAndView("employees/add-user");
+        mv.addObject("user", new User());
+        return mv;
+    }
+
+    @PostMapping("/add-user")
+    public String saveUser(@Valid User user, BindingResult result) {
+        if (result.hasErrors()) {
+            return "employee/add-user";
+        }
+        User newUser = new User();
+        newUser.setUsername(user.getUsername());
+        newUser.setPassword(passwordEncoder.encode(user.getPassword()));
+        Authority authority = adminRepo.findById(1).orElseThrow(
+            () -> new IllegalArgumentException("Invalid role")
+        );
+        Set<Authority> authorities = new HashSet<Authority>();
+        authorities.add(authority);
+        newUser.setAuthorities(authorities);
+        userRepo.save(newUser);
         return "redirect:/employees/list";
     }
 

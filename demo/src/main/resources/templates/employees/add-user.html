@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <head th:replace="/fragments/header :: common-header">  
+
+</head>
+
+<body>
+    <div th:replace="/fragments/header :: header"></div> 
+    <main class="page lanidng-page">
+        <section class="portfolio-block block-intro" style="width: 900;">
+            <h2 class="text-center" style="width: 900;padding: 37px;">New User Form</h2>
+            <div class="container">
+                <p style="font-size: 19px;"></p>
+            </div>
+            <form action="#" th:action="@{/employees/add-user}" th:object="${user}" method="post">
+                <input type="text" th:field="*{username}" class="form-control" id="employeeId" placeholder="Username">
+                <input type="password" th:field="*{password}" class="form-control" id="name" placeholder="Password (2-30 chars)">
+                <button class="btn btn-primary" type="submit" value="Add" style="margin: 20px;padding: 3px 16px;">Submit</button><br>
+              </form>
+              
+        </section>
+    </main>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>

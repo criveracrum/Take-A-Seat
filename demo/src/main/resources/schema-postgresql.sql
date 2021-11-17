@@ -7,9 +7,12 @@ DROP TABLE IF EXISTS workspace;
 DROP TABLE IF EXISTS employees;
 DROP TABLE IF EXISTS team;
 DROP TABLE IF EXISTS price;
+DROP TABLE IF EXISTS authority;
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS users_authority;
 
 DROP SEQUENCE IF EXISTS hibernate_sequence;
-CREATE SEQUENCE hibernate_sequence START WITH 1 INCREMENT BY 1;
+CREATE SEQUENCE hibernate_sequence START WITH 1 INCREMENT BY 20;
 CREATE TABLE reservations (
     id serial PRIMARY KEY NOT NULL,
     reservation_num varchar(10),
@@ -65,4 +68,20 @@ CREATE TABLE employees(
 CREATE TABLE team(
     team_id serial PRIMARY KEY,
     teamname VARCHAR(20)
-)
+);
+
+create table authority (
+    id serial primary key,
+    name varchar(15)
+);
+
+create table users (
+    id serial primary key,
+    username varchar(15),
+    password varchar(80)
+);
+
+create table users_authority (
+    authority_id int,
+    user_id int
+);

@@ -10,20 +10,21 @@
     <div th:replace="/fragments/header :: header"></div>  
     <main class="page lanidng-page">
         <section class="portfolio-block block-intro" style="width: 900;">
-            <h2 class="text-center" style="width: 900;padding: 37px;">Log In</h2>
+            <button class="btn btn-success" type="button" style="margin: 20px;padding: 3px 16px;"><a th:href="@{/logout}">Log Out</a></button><br>
+
             <div class="container">
                 <p style="font-size: 19px;"></p>
             </div>
             <form>
 
-                <input class="form-control" type="text" placeholder="Name">
-              <input class="form-control" type="text" placeholder="Employee ID">
                 </select>
 
                     <a class="nav-link" href="/">
-                    <button class="btn btn-success" type="button" style="margin: 20px;padding: 3px 16px;">Log In</button><br>
                     </a>
                     <a class="btn btn-primary" href="/employees/add">
+                        New Employee Form
+                    </a>
+                    <a class="btn btn-primary" href="/employees/add-user">
                         New User Form
                     </a>
               </form>

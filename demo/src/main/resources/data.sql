@@ -60,3 +60,10 @@ INSERT INTO building(buildingName, desks, booth, cubicle, hightop, conferenceRoo
     ('25 E Jackson', 5, 2, 1, 1, 2, 8, 1),
     ('243 S Wabash', 2, 6, 10, 4, 1, 8, 4),
     ('14 E Jackson', 1, 5, 3, 7, 2, 8, 1);
+
+INSERT INTO authority(name, id) VALUES ('ROLE_ADMIN', 1);
+INSERT INTO authority(name, id) VALUES ('ROLE_USER', 2);
+INSERT INTO users_authority(authority_id, user_id) VALUES (1, 50);
+INSERT INTO users_authority(authority_id, user_id) VALUES (2, 51);
+INSERT INTO users (id, username, password) VALUES (50,'power-user','$2a$12$MCzdwZTDQEp5SACQRAQXXOaUI4xTcwvbALpCZT0atysA4PBBJbmbC');
+INSERT INTO users (id, username, password) VALUES (51,'demo-user','$2a$12$MCzdwZTDQEp5SACQRAQXXOaUI4xTcwvbALpCZT0atysA4PBBJbmbC');
