@@ -49,7 +49,7 @@ public class FeaturedController {
         featuredRepository.save(featured);
     
         model.addAttribute("featured", featuredRepository.findAll());
-        return "redirect:/index";
+        return "redirect:/";
     }
     
 }
