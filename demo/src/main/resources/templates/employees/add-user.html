@@ -16,7 +16,7 @@
             </div>
             <form action="#" th:action="@{/employees/add-user}" th:object="${user}" method="post">
                 <input type="text" th:field="*{username}" class="form-control" id="employeeId" placeholder="Username">
-                <input type="password" th:field="*{password}" class="form-control" id="name" placeholder="Password">
+                <input type="password" th:field="*{password}" class="form-control" id="name" placeholder="Password (2-30 chars)">
                 <button class="btn btn-primary" type="submit" value="Add" style="margin: 20px;padding: 3px 16px;">Submit</button><br>
               </form>
               
