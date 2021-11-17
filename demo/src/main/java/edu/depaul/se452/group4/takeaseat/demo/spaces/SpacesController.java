@@ -5,6 +5,7 @@ import java.util.List;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -36,12 +37,26 @@ public class SpacesController {
     @Autowired
     private WorkspaceRepository workspaceRepository;
 
+
     @GetMapping
-    public String showAllWorkspaces(Model model) {
-        model.addAttribute("spaces", spacesRepository.findAll());
-        model.addAttribute("workspaces", workspaceRepository.findAll());
-        model.addAttribute("amenities", amenitiesRepository.findAll());
+    public String searchAllWorkspaces(Model model,
+                   @Param("keyword") String keyword) {
+        List<Spaces>listSpaces = spaService.findAllSpaces(keyword);
+        List<Workspace> listWorkspace = spaService.findAllWorkspaces(keyword);
+        List<Amenities> listAmenities = spaService.findAllAmenities(keyword);
+        model.addAttribute("spaces", listSpaces);
+        model.addAttribute("workspaces", listWorkspace);
+        model.addAttribute("amenities", listAmenities);
         return "spaces/main-list";
+    }
+
+
+    
+
+    @GetMapping("/workspace-list")
+    public String showWorkspaces(Model model) {
+        model.addAttribute("workspaces", workspaceRepository.findAll());
+        return "spaces/workspace-list";
     }
 
     @GetMapping("/amenity-list")
