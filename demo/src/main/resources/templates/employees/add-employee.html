@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <head th:replace="/fragments/header :: common-header">  
+
+</head>
+
+<body>
+    <div th:replace="/fragments/header :: header"></div> 
+    <main class="page lanidng-page">
+        <section class="portfolio-block block-intro" style="width: 900;">
+            <h2 class="text-center" style="width: 900;padding: 37px;">New User Form</h2>
+            <div class="container">
+                <p style="font-size: 19px;"></p>
+            </div>
+            <form action="#" th:action="@{/employees}" th:object="${employee}" method="post">
+                <input type="number" th:field="*{employeeId}" class="form-control" id="employeeId" placeholder="Employee ID">
+                            <input type="text" th:field="*{name}" class="form-control" id="name" placeholder="First and Last Name">
+                            <input type="date" th:field="*{birthdate}" class="form-control" id="birthdate" placeholder="Date of Birth">
+                            <select class="form-select" th:field="*{team}">
+                                <option th:each="i : ${team}" th:value="${i.id}" th:text="${i.name}" >
+                                </option>
+                            </select>
+                <button class="btn btn-primary" type="submit" value="Add" style="margin: 20px;padding: 3px 16px;">Submitt</button><br>
+              
+              </form>
+              <a class="nav-link" href="/employees/list"><input type="button" class="btn" value="Manage Employees"></a>
+        </section>
+    </main>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>

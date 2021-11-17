@@ -1,26 +1,34 @@
 package edu.depaul.se452.group4.takeaseat.demo.team;
 
-import java.util.List;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
+import java.sql.Date;
 import javax.persistence.Id;
-import javax.persistence.Column;
-
-import edu.depaul.se452.group4.takeaseat.demo.employee.Employee;
+import javax.persistence.*;
+import java.util.List;
 import lombok.Data;
 import lombok.ToString;
+import edu.depaul.se452.group4.takeaseat.demo.employee.Employee;
 
 @Data
 @Entity
+@Table(name = "team")
 public class Team {
   @Id // primary key
-  @GeneratedValue
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "team_id", nullable = false)
   private long id;
 
-  @Column(name = "team_name")
-  private String teamName;
+  @Column(name = "teamname")
+  private String name;
 
-  @Column(name = "employeeCount")
-  private String employeeCount;
+  @OneToMany(mappedBy = "team")
+  @Column(name = "employee_list")
+  @ToString.Exclude
+  public List<Employee> employeeList;
+
+  /*
+   * @OneToOne(mappedBy = "team")
+   * 
+   * @ToString.Exclude private Employee employee;
+   */
 
 }

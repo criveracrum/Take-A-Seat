@@ -59,10 +59,6 @@ public class SpacesController {
         return "spaces/workspace-list";
     }
 
-
-
-
-
     @GetMapping("/amenity-list")
     public String showAmenities(Model model) {
         model.addAttribute("amenities", amenitiesRepository.findAll());

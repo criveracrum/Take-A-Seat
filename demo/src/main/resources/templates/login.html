@@ -1,0 +1,40 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head >Login 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" th:href="@{/assets/bootstrap/css/bootstrap.min.css}" href="assets/bootstrap/css/bootstrap.min.css">
+
+<!-- Custom styles for this template -->
+<link rel="stylesheet" th:href="@{/assets/bootstrap/css/signin.css}" href="assets/bootstrap/css/signin.min.css">
+
+</head>
+
+<div class="sidenav">
+    <div class="login-main-text">
+        
+       <h2><img class="mb-4" th:src="@{/assets/img/takeaseat.jpg}" alt="" width="90" height="90"><br> </h2>
+       <p>Please Login</p>
+    </div>
+ </div>
+ <div class="main">
+    <div class="col-md-6 col-sm-12">
+       <div class="login-form">
+          <form th:action="@{/login}" method="post">
+             <div class="form-group">
+                <label>User Name</label>
+                <input type="text" class="form-control" id="username"
+                name="username" placeholder="User Name">
+             </div>
+             <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="password"
+                name="password" class="form-control" placeholder="Password">
+             </div>
+             <button type="submit" name="login-submit"
+             id="login-submit"class="btn btn-black" value="Log In">Login</button>
+          </form>
+       </div>
+    </div>
+ </div>
+</html>

@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import edu.depaul.se452.group4.takeaseat.demo.amenities.AmenitiesRepository;
+import edu.depaul.se452.group4.takeaseat.demo.employee.EmployeeService;
 import edu.depaul.se452.group4.takeaseat.demo.spaces.SpacesRepository;
 import edu.depaul.se452.group4.takeaseat.demo.workspace.WorkspaceRepository;
 
@@ -39,6 +40,9 @@ public class ReservationController {
     @Autowired
     private NewsfeedRepository newsfeedRepo;
 
+    @Autowired
+    private EmployeeService employeeService;
+
     @GetMapping
     public String showAllReservations(Model model) {
         List<Reservation> resList = resService.findAll();
@@ -52,8 +56,8 @@ public class ReservationController {
     public String showAddForm(Model model) {
         model.addAttribute("reservation", new Reservation());
         model.addAttribute("spaces", spaceRepo.findAll());
-        // model.addAttribute("workspaces", workspaceRepo.findAll());
-        // model.addAttribute("amenities", amenityRepo.findAll());
+        model.addAttribute("employees", employeeService.findAll());
+
         return "reservations/create-reservation";
     }
 

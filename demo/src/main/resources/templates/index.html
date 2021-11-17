@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <head th:replace="/fragments/header :: common-header">  
+</head>
+
+<!-- <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Home - Brand</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/css/pikaday.min.css">
+    <link rel="stylesheet" href="assets/css/styles.min.css">
+    <link rel="stylesheet" href="assets/css/index.min.css">
+</head> -->
+<div th:replace="/fragments/header :: header"></div>  
+<body>
+    <!-- <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-success bg-gradient portfolio-navbar gradient">
+        <div class="container">
+            <h1>Take-A-Seat</h1>
+            <div class="collapse navbar-collapse" id="navbarNav-2">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/newsfeed">Newsfeed</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/reservations">Reservations</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/spaces">Spaces</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/dashboard">Dashboard</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/employees"> <img width="25" height="25" src="assets/img/profile.jpg"> </a></li>
+                </ul>
+            </div>
+        </div>
+    </nav> -->
+    <main class="page lanidng-page">
+        <section class="portfolio-block block-intro"><img class="border rounded-0 border-success" src="assets/img/workspace.jpg">
+            <div class="container">
+                <div class="about-me"></div>
+            </div>
+            <p>Book a workspace for your next trip to the office.</p>
+        </section>
+        <section class="portfolio-block photography"></section>
+    </main>
+    <main class="page lanidng-page">
+        <h1>Featured Spaces </h1>
+        <div class="table-responsive table-borderless">
+            <table class="table">
+                <thead>
+                    <tr>
+                    
+                        <th scope="col">Workspace Name</th>
+                        <th scope="col">Max Size</th>
+                        <th scope="col"></th>
+                    </tr>
+                </thead>
+                <tbody class="table-body">
+                    <!-- <tr th:if="${featured}">
+                        <td colspan="2"> No Featured Spaces... </td>
+                    </tr> -->
+                    <tr scope="row" th:each="feature : ${featured}">
+                        <td th:text="${feature.workspaceName}"></td>
+                        <td th:text="${feature.size}"></td>
+                        <td><a th:href="@{/reservations/create}" class="btn btn-info">Book</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </main>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pikaday/1.6.1/pikaday.min.js"></script>
+    <script src="assets/js/script.min.js"></script>
+</body>
+
+</html>

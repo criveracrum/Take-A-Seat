@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <head th:replace="/fragments/header :: common-header">  
+
+</head>
+
+<section class="portfolio-block block-intro" style="width: 900;">
+    <div th:replace="/fragments/header :: header"></div> 
+    <h2 class="text-center" style="width: 900;padding: 37px;">Edit Employee</h2>
+    <div class="container">
+        <p style="font-size: 19px;"></p>
+    </div>
+    <form action="#" th:action="@{/employees/edit}" th:object="${employee}" method="post">
+        <h3 th:text="*{'employee #' + employeeId}"></h3>
+        <!-- <label for="name" class="col-form-label">Edit Employee Name</label> -->
+        <input class="form-control" type="text" th:field="*{name}">
+
+        <!-- <label for="date" class="col-form-label">Edit Employee Birthdate</label> -->
+        <input class="form-control" type="date" th:field="*{birthdate}">
+
+        <select class="form-select" th:field="*{team}">
+            <option th:each="i : ${team}" th:value="${i.id}" th:text="${i.name}" >
+            </option>
+        </select>
+        
+        <div class="form-group col-md-6" hidden>
+            <input type="number" th:field="*{employeeId}" class="form-control" id="employeeId" placeholder="employeeId" readonly>
+            <input type="text" th:field="*{id}" class="form-control" id="id" placeholder="Id" readonly>
+        </div>
+
+        <button class="btn btn-primary" type="submit" value="Add" style="margin: 33px;padding: 3px 16px;">Update</button>
+    </form>
+</section>
