@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import edu.depaul.se452.group4.takeaseat.demo.security.User;
 import edu.depaul.se452.group4.takeaseat.demo.team.Team;
 import lombok.ToString;
 
@@ -41,4 +41,5 @@ public class Employee {
    * 
    * @JoinColumn(name = "team_id") private Team team;
    */
+
 }
